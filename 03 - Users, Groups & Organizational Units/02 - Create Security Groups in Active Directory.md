@@ -79,7 +79,7 @@ Organize users and manage permissions through security groups.
 
 ### **5 - Verify Group Membership**
 
-1. Open Active Directory Users and Computers.
+1. Open Server Manager → Tools → Active Directory Users and Computers.
 2. Navigate to `corp.test` → `CORP` → `Groups`.
 3. Open `DL_ITAdmins_Share_Change`.
 4. Verify that `GG_ITAdmins` appears under the `Members` tab.
