@@ -18,6 +18,7 @@ Preferred DNS server: 10.10.10.1   ← temporal
 ```
 
 5. Click **OK** → **Close**.
+<img width="1052" height="680" alt="image" src="https://github.com/user-attachments/assets/69982443-77f3-4d61-a0a6-edcdf1d8c444" />
 
 ---
 ## Verify network connectivity
