@@ -7,6 +7,7 @@ Apply a default desktop wallpaper to domain users.
 
 1. On `DC01`, create a folder:  `C:\Wallpapers`
 2. Copy an image into it.
+<img width="896" height="589" alt="image" src="https://github.com/user-attachments/assets/7265883c-64e0-466d-a76d-8e6c72f0dde4" />
 
 ---
 ## 2 - Share the folder
