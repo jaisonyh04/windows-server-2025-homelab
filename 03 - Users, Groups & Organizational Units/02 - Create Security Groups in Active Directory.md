@@ -45,7 +45,7 @@ Organize users and manage permissions through security groups.
 
 >A **Domain Local Group** represents **what resource can be accessed**.
 
-1. Open Server Manager → Active Directory Users and Computers.
+1. Open Server Manager → Tools → Active Directory Users and Computers.
 2. Navigate to: `corp.test` → `CORP` → `Groups`.
 3. Right-click the `Domain Local` OU → **New** → **Group**.
 4. Give it a name, set Group scope to `Domain Local` and Group type to `Security`, click **OK**.
