@@ -22,6 +22,7 @@ Organize users and manage permissions through security groups.
 | GG_HR         |
 | GG_Finance    |
 | GG_Operations |
+<img width="751" height="528" alt="image" src="https://github.com/user-attachments/assets/85b2d540-e592-42a4-a08a-a31b913dced9" />
 
 ---
 ## 2 - Assign User Membership
