@@ -15,6 +15,7 @@ C:\File-sharing
 ├── Finance
 └── Operations
 ```
+<img width="896" height="589" alt="image" src="https://github.com/user-attachments/assets/6040da52-d794-4b0e-b668-87b68b37b583" />
 
 ---
 ### 2 - Set Up the Share (SMB)
