@@ -115,18 +115,18 @@ The command completed successfully
 ```
 
 
->The command **`nltest /dsgetdc:itlab.local`** is used in Active Directory environments to locate an active **Domain Controller (DC)** for the specified domain (`itlab.local`).
+>The command **`nltest /dsgetdc:corp.test`** is used in Active Directory environments to locate an active **Domain Controller (DC)** for the specified domain (`corp.test`).
 
 ### What exactly does it do?
 
-1. **Queries the directory service (DS):** It instructs the NetLogon tool (`nltest`) to send a request to find an available Domain Controller (DC) for the `itlab.local` domain.
+1. **Queries the directory service (DS):** It instructs the NetLogon tool (`nltest`) to send a request to find an available Domain Controller (DC) for the `corp.test` domain.
 2. **Uses DNS and network protocols:** Queries the DNS SRV records to locate which server on the network holds the authentication and domain control roles for that domain name.
 
 ### What information does it return if successful?
 
 When the command runs successfully on a machine joined to the domain (or one that has connectivity and the correct DNS configuration for the domain), it displays key information such as:
 
-- **DC (Domain Controller):** The name of the responding server (for example, `\\WIN-SRV01`).
+- **DC (Domain Controller):** The name of the responding server (for example, `\\DC01`).
 - **Address:** The IP address of the domain controller (`\\10.10.10.10`).
 - **Domain GUID and Domain Name:** Confirmation of the verified domain.
 - **Flags:** Features and services available on that server (such as Global Catalog server, PDC, etc.).
