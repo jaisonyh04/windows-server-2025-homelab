@@ -33,6 +33,7 @@ corp.test
     └── OU=Workstations
         └── WIN11-01
 ```
+<img width="1274" height="763" alt="image" src="https://github.com/user-attachments/assets/98ee9a70-807d-4cbd-9b5a-43433e576e34" />
 
 ---
 ## 2 - Create the users
