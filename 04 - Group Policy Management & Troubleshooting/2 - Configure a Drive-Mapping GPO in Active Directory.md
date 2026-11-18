@@ -56,6 +56,7 @@ Expected output:
     -----------------------------
         DriveMapping-ITAdmins
 ```
+<img width="1276" height="764" alt="image" src="https://github.com/user-attachments/assets/1dc47d33-9634-4b0e-8443-5eddac194148" />
 
 
 
