@@ -27,6 +27,7 @@ DHCP range:
 ```
 
 4. Click **Finish**.
+<img width="800" height="625" alt="image" src="https://github.com/user-attachments/assets/0f6616b6-63d1-4a27-80c8-358f1632ebfc" />
 
 ---
 ## 2 - Verify network configuration
