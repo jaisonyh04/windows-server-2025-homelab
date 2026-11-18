@@ -4,7 +4,7 @@ Deploy Active Directory for centralized identity management.
 
 ---
 
-1. Open *Server Manager* → *Manage *→ Add Roles and Features.
+1. Open *Server Manager* → *Manage* → Add Roles and Features.
 2. Installation Type: *Role-based or feature-based installation* → **Next**.
 3. Server Selection: `DC01` → **Next**.
 4. Server Roles: Select *Active Directory Domain Services* → *Add Features* → *DNS Server* → *Add Features* → **Next**.
