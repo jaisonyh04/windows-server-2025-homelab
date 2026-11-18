@@ -59,6 +59,7 @@ Organize users and manage permissions through security groups.
 | DL_HR_Share_Change         |
 | DL_Finance_Share_Change    |
 | DL_Operations_Share_Change |
+<img width="751" height="528" alt="image" src="https://github.com/user-attachments/assets/94a8327a-56e7-4963-9e52-653d45ee8c0f" />
 
 ---
 ## 4 - Configure Group Nesting
