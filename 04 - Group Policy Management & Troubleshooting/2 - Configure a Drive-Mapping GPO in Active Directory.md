@@ -58,6 +58,4 @@ Expected output:
 ```
 
 
----
-### Final result:
 
