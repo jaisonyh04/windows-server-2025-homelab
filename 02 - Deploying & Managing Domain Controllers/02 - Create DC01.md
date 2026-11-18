@@ -20,6 +20,8 @@ Deploy the primary Domain Controller.
 | **OS**       | Windows Server 2025 Standard Evaluation (Desktop Experience) |
 
 ---
+<img width="1276" height="862" alt="image" src="https://github.com/user-attachments/assets/347e2707-99b6-49e1-ad69-0e4d79fa5c1d" />
+
 ## 1. Rename PC
 
 1. Press **Win `+` I** → **Home** → **Rename**.
