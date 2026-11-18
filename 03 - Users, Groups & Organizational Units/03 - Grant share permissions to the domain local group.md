@@ -57,4 +57,8 @@ C:\File-sharing
 | Finance    | ==🔴Access Denied== |
 | Operations | ==🔴Access Denied== |
 
+<img width="1273" height="762" alt="image" src="https://github.com/user-attachments/assets/0389b582-6c55-49f1-b61e-aacb4ac58d4b" />
+<img width="1274" height="764" alt="image" src="https://github.com/user-attachments/assets/74ac5cd7-5683-4a7a-ad05-42a89f5cb3ea" />
+<img width="1274" height="764" alt="image" src="https://github.com/user-attachments/assets/ddbb4c61-54b7-404e-b82d-1dedd75fbcd2" />
+
 
