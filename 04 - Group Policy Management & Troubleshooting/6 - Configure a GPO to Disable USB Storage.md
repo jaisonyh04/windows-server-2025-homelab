@@ -1,6 +1,7 @@
 ### Objective
 
 Prevent users from using USB storage devices.
+<img width="942" height="523" alt="image" src="https://github.com/user-attachments/assets/3b098884-3299-43d3-9565-b4584d8ef4e1" />
 
 ---
 1. Open Server Manager → Tools → Group Policy Management.
