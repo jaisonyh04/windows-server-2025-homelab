@@ -5,7 +5,7 @@ Organize Active Directory objects and create user accounts based on organization
 ---
 ## 1 - Create the Organizational Units (OU):
 
-1. Open Server Manager → Active Directory Users and Computers.
+1. Open Server Manager → Tools → Active Directory Users and Computers.
 2. Right-click on `corp.test` → **New** → **Organizational Unit**.
 3. Enter: `CORP`.
 4. Right-click on `CORP` → **New** → **Organizational Unit**.
