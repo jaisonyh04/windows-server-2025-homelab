@@ -34,11 +34,13 @@ Deployment of a virtualized Windows Server 2025 Homelab with a domain controller
 - DNS.
 - Active Directory Domain Services.
 - SMB File Server.
+<img width="1276" height="862" alt="image" src="https://github.com/user-attachments/assets/9795aa96-d719-4972-8282-1fb45fa368b6" />
 
 ### WIN11-01
 
 - Windows 11 Pro.
 - Domain Client / IT Administrator Workstation.
+<img width="1276" height="863" alt="image" src="https://github.com/user-attachments/assets/becc5676-905d-4096-93d1-697b87a76ff2" />
 
 ---
 
