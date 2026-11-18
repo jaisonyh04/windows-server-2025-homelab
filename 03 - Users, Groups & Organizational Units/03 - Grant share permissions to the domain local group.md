@@ -4,6 +4,7 @@ Assign access to shared folders using Domain Local groups.
 
 ---
 ### 1 - Create the shared folder
+- On `DC01`, create a folder:
 
 ```
 C:\File-sharing
