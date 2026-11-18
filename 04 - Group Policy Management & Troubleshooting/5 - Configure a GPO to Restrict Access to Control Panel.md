@@ -52,3 +52,4 @@ Expected output:
     -----------------------------
         Restrict Control Panel
 ```
+<img width="1275" height="763" alt="image" src="https://github.com/user-attachments/assets/497a58c8-58a9-4030-9ba4-81a46009cb9c" />
