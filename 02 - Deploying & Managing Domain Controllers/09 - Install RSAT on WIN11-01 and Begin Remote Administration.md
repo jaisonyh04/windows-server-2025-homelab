@@ -39,8 +39,7 @@ To use Remote Server Administration Tools, you need the following prerequisites:
 When Server Manager requests the server inventory, `DC01` generates a large WS-Management response (roles, features, services, performance data, etc.). On Windows Server 2025, the default `500 KB` envelope appears to be too small for that response. Increasing the server's `MaxEnvelopeSizeKb` allows it to process and return the larger payload successfully.
 
 1. Sign in to `DC01` as `CORP\Administrator`.
-2. Open Windows PowerShell as Administrator.
-3. Run:
+2. Open PowerShell and run:
 
    ```powershell
    Set-Item WSMan:\localhost\MaxEnvelopeSizeKb 8192
