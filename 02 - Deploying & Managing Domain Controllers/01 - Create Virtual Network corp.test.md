@@ -61,7 +61,7 @@ Expected output:
 ```
 Windows IP Configuration
 
-   Host Name . . . . . . . . . . . . : DC02
+   Host Name . . . . . . . . . . . . : DC01
    Primary Dns Suffix  . . . . . . . :
    Node Type . . . . . . . . . . . . : Hybrid
    IP Routing Enabled. . . . . . . . : No
