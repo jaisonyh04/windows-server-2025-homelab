@@ -1,0 +1,45 @@
+### Purpose
+
+Troubleshoot `G`roup `P`olicy `O`bjects.
+
+---
+
+## 1 - Force a Group Policy update
+
+1. Open PowerShell and run:
+
+```powershell
+gpupdate /force
+```
+
+---
+## 2 - Verify the Resultant Set of Policy (RSoP) 
+
+
+1. If it is a **Computer Configuration** policy, restart the computer.
+2. If it is a **User Configuration** policy, sign out and sign back in.
+3. Verify that the GPO was applied:
+
+```powershell
+gpresult /scope computer /r
+gpresult /scope user /r
+```
+
+4. Verify that the GPO appears under `Applied Group Policy Objects`.
+
+---
+## 3 - Verify the GPO configuration
+
+1. Verify that the user or computer object is located in the correct **Organizational Unit (OU)**.
+2. Verify that the GPO is linked to the correct `OU` and that **Link Enabled** is enabled.
+3. Verify the GPO's **Security Filtering** and **Delegation** permissions.
+4. Check **Event Viewer** for Group Policy processing errors.
+
+```text
+Event Viewer
+└── Applications and Services Logs
+    └── Microsoft
+        └── Windows
+            └── GroupPolicy
+                └── Operational
+```
