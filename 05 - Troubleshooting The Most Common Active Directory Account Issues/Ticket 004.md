@@ -1,6 +1,6 @@
 ## Scenario
 User cannot log in to the domain, and receives *The user's account has expired* message.
-
+The user's account has expired
 ---
 ## 1 - Verify the Account Status
 
