@@ -7,7 +7,7 @@ User cannot log in to the domain, and receives *Your account has been disabled* 
 1. On `DC01` Open *Server Manager* → *Tools* → *Active Directory Users and Computers* → `corp.test`.
 2. Right-click `corp.test` → **Find...**.
 3. Enter the affected user name → **Find Now**.
-4. Right-click the user → **Enable Account**.
+4. Right-click the user name → **Enable Account**.
 5. In the user's `OU`, right-click → **Refresh**.
 
 ---
