@@ -48,6 +48,7 @@ This account is currently locked out on this Active Directory Domain Controller.
 2. At the sign-in screen, sign in using the temporary password.
 3. Windows displays: `The user's password must be changed before signing in`.
 4. The new password must meet complexity requirements.
+<img width="1271" height="764" alt="image" src="https://github.com/user-attachments/assets/ca92f3d3-7f93-4263-98c9-4f2fa0c89bbe" />
 
 
 
