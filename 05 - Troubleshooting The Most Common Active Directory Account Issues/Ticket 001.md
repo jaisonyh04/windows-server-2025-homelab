@@ -14,6 +14,7 @@ To simulate a real Help Desk ticket, intentionally lock a user account.
 4. When the account becomes locked, Windows displays a message similar to: 
 
 > **The referenced account is currently locked out and may not be logged on to.**
+<img width="1273" height="765" alt="image" src="https://github.com/user-attachments/assets/5c98a530-2b77-4a9a-8a60-63fbb3cefe39" />
 
 ---
 ## 2 - Verify the Account Status
