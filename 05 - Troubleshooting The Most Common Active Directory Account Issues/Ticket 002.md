@@ -26,7 +26,7 @@ Recurring lockout issue.
 6. If the user signs in on multiple devices, update the password on each device.
 
 ---
-## 3 - Verify the resilution
+## 3 - Verify the resolution
 
 1. Ask the user to continue working normally for several minutes.
 2. On `DC01`, monitor the **Security** log for new **Event ID 4740** entries.
