@@ -2,7 +2,7 @@
 User cannot log in to the domain, and receives *Your account has been disabled* message.
 
 ---
-## 1 - Verify the Account Status
+## 1 - Verify the Account Status and Resolve the Issue
 
 1. On `DC01` Open *Server Manager* → *Tools* → *Active Directory Users and Computers* → `corp.test`.
 2. Right-click `corp.test` → **Find...**.
