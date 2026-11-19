@@ -29,6 +29,7 @@ To simulate a real Help Desk ticket, intentionally lock a user account.
 Unlock account.
 This account is currently locked out on this Active Directory Domain Controller.
 ```
+<img width="1271" height="764" alt="image" src="https://github.com/user-attachments/assets/f8e3c9ce-635f-4e2b-bb3d-3a7113f5425d" />
 
 
 ---
