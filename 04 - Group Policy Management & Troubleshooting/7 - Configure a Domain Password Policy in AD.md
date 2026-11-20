@@ -11,7 +11,7 @@ Enforce a consistent password policy for all domain accounts.
 ## 1 - Open the Default Domain Policy
 
 1. Open *Server Manager* → *Tools* → *Group Policy Management*.
-2. Navigate to: `Forest: corp.test` → *Domains* → `corp.test` → *Default Domain Policy*.
+2. Navigate to: `Forest: corp.test` → `Domains` → `corp.test`.
 3. Right-click *Default Domain Policy*.
 4. Right-click → **Edit**.
 5. Navigate to: Computer Configuration → Policies → Windows Settings → Security Settings → Account Policies → **Password Policy**.
@@ -28,8 +28,6 @@ Enforce a consistent password policy for all domain accounts.
 | Minimum password age                        | 1 day         | Stops users from cycling through history to reuse an old password |
 | Maximum password age                        | 90            |                                                                   |
 | Store passwords using reversible encryption | Disabled      | Weakens password storage                                          |
-<img width="1100" height="559" alt="image" src="https://github.com/user-attachments/assets/229982ec-2876-4503-a284-cb8d011fa521" />
-
 ### Verification
 
 1. Log in to `WIN11-01` using a domain account.
