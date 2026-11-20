@@ -9,24 +9,24 @@ Assign access to shared folders using Domain Local groups.
 ```
 C:\File-sharing
 │
-├── ITAdmins
+├── SysAdmins
 ├── HelpDesk
 ├── HR
 ├── Finance
 └── Operations
 ```
-<img width="896" height="589" alt="image" src="https://github.com/user-attachments/assets/6040da52-d794-4b0e-b668-87b68b37b583" />
+<img width="1275" height="763" alt="image" src="https://github.com/user-attachments/assets/54cdaa2e-063a-49ff-9ad1-0a2c3e8cc784" />
 
 ---
 ### 2 - Set Up the Share (SMB)
 
 >**Share permissions** Control who can access the shared folder over the network.
 
-1. Right-click the `ITAdmins` folder and select **Properties**.
+1. Right-click the `SysAdmins` folder and select **Properties**.
 2. Go to the **Sharing** tab and click the **Advanced Sharing...** button.
 3. Check the **Share this folder** box.
 4. Click the **Permissions** button.
-5. Remove `Everyone `group. Add `DL_ITAdmins_Share_Change`.
+5. Remove `Everyone `group. Add `DL_FS_IT_SysAdmins_RW`.
 6. Set the Share Permissions to `Change`.
 7. Click **OK** → **OK**.
 
@@ -38,7 +38,7 @@ C:\File-sharing
 1. In the same folder **Properties** window, go to the **Security** tab.
 2. Click **Edit...**, then **Add...**.
 3. Type `dl`, click **Check Names**.
-4. Select `DL_ITAdmins_Share_Change`, click **OK**.
+4. Select `DL_FS_IT_SysAdmins_RW`, click **OK**.
 5. Grant it `read`/`write` permissions. Click **OK** → **Close**.
 6. Repeat the same pattern for `HelpDesk`, `HR`, `Finance` and `Operations` folders.
 
@@ -48,18 +48,18 @@ C:\File-sharing
 1. On `WIN11-01` sign in as: `CORP\jsmith`
 2. Open File Explorer.
 3. In the `Address bar` enter: `\\DC01.corp.test\`
-4. `jsmith` (`ITAdmins`) should **NOT** have access to `HelpDesk`, `HR`, `Finance` or `Operations` folders.
+4. `jsmith` (`SysAdmins`) should **NOT** have access to `HelpDesk`, `HR`, `Finance` or `Operations` folders.
 
 | Folder     | jsmith (ITAdmins)   |
 | ---------- | ------------------- |
-| ITAdmins   | ==🟢Modify==        |
+| SysAdmins  | ==🟢Modify==        |
 | HelpDesk   | ==🔴Access Denied== |
 | HR         | ==🔴Access Denied== |
 | Finance    | ==🔴Access Denied== |
 | Operations | ==🔴Access Denied== |
 
-<img width="1273" height="762" alt="image" src="https://github.com/user-attachments/assets/0389b582-6c55-49f1-b61e-aacb4ac58d4b" />
-<img width="1274" height="764" alt="image" src="https://github.com/user-attachments/assets/74ac5cd7-5683-4a7a-ad05-42a89f5cb3ea" />
-<img width="1274" height="764" alt="image" src="https://github.com/user-attachments/assets/ddbb4c61-54b7-404e-b82d-1dedd75fbcd2" />
+<img width="1275" height="763" alt="image" src="https://github.com/user-attachments/assets/494a1419-3d8e-48fb-81c0-d70bb0bbce6a" />
+
+<img width="1275" height="763" alt="image" src="https://github.com/user-attachments/assets/5f800d3d-aa55-403b-9833-2fe10ca7169d" />
 
 
