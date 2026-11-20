@@ -10,19 +10,20 @@ Organize users and manage permissions through security groups.
 
 
 1. Open Server Manager → Tools → Active Directory Users and Computers.
-2. Navigate to: `corp.test` → `CORP` → `Groups`.
-3. Right-click the `Global` OU → **New** → **Group**.
+2. Navigate to: `corp.test` → `Corp` → `Groups`.
+3. Right-click the `Groups` OU → **New** → **Group**.
 4. Give it a name, set Group scope to `Global` and Group type to `Security`, click **OK**.
 5. Create the following groups:
 
-| Group Name    |
-| ------------- |
-| GG_ITAdmins   |
-| GG_HelpDesk   |
-| GG_HR         |
-| GG_Finance    |
-| GG_Operations |
-<img width="751" height="528" alt="image" src="https://github.com/user-attachments/assets/85b2d540-e592-42a4-a08a-a31b913dced9" />
+| Group Name      |
+| --------------- |
+| GG_IT_SysAdmins |
+| GG_IT_HelpDesk  |
+| GG_HR           |
+| GG_Finance      |
+| GG_Operations   |
+Where:
+- **GG** = Global Group
 
 ---
 ## 2 - Assign User Membership
@@ -33,13 +34,13 @@ Organize users and manage permissions through security groups.
 4. Add the rest of the members → **Apply** → **OK**.
 5. Add users to their corresponding Golbal Security Groups:
 
-| Group Name    | Members               |
-| ------------- | --------------------- |
-| GG_ITAdmins   | jsmith / abrown       |
-| GG_HelpDesk   | dwilson / slee        |
-| GG_HR         | mjohnson / edavis     |
-| GG_Finance    | janderson / smartinez |
-| GG_Operations | dmiller / ogarcia     |
+| Group Name      | Members               |
+| --------------- | --------------------- |
+| GG_IT_SysAdmins | jsmith / abrown       |
+| GG_IT_HelpDesk  | dwilson / slee        |
+| GG_HR           | mjohnson / edavis     |
+| GG_Finance      | janderson / smartinez |
+| GG_Operations   | dmiller / ogarcia     |
 
 ---
 ## 3 - Create the Domain Local Groups (Permissions)
@@ -47,42 +48,73 @@ Organize users and manage permissions through security groups.
 >A **Domain Local Group** represents **what resource can be accessed**.
 
 1. Open Server Manager → Tools → Active Directory Users and Computers.
-2. Navigate to: `corp.test` → `CORP` → `Groups`.
-3. Right-click the `Domain Local` OU → **New** → **Group**.
+2. Navigate to: `corp.test` → `Corp` → `Groups`.
+3. Right-click the `Groups` OU → **New** → **Group**.
 4. Give it a name, set Group scope to `Domain Local` and Group type to `Security`, click **OK**.
 5. Create the following groups:
 
-| Group Name                 |
-| -------------------------- |
-| DL_ITAdmins_Share_Change   |
-| DL_HelpDesk_Share_Change   |
-| DL_HR_Share_Change         |
-| DL_Finance_Share_Change    |
-| DL_Operations_Share_Change |
-<img width="751" height="528" alt="image" src="https://github.com/user-attachments/assets/94a8327a-56e7-4963-9e52-653d45ee8c0f" />
+| Group Name            |
+| --------------------- |
+| DL_FS_IT_SysAdmins_RW |
+| DL_FS_IT_HelpDesk_RW  |
+| DL_FS_HR_RW           |
+| DL_FS_Finance_RW      |
+| DL_FS_Operations_RW   |
+Where:
+- **DL** = Domain Local
+- **FS** = File Server (resource type)
+- **RW** = Read/Write
+- **RO** = Read Only
+<img width="1275" height="763" alt="image" src="https://github.com/user-attachments/assets/0ea6df8b-1f4c-4882-a980-6e92c0c0edf8" />
+
 
 ---
 ## 4 - Configure Group Nesting
 
-1. Right-click the `GG_ITAdmins` global group → **Add to a group...**.
+1. Right-click the `GG_IT_SysAdmins` global group → **Add to a group...**.
 2. Write `dl` → **Check Names**.
-3. Select `DL_ITAdmins_Share_Change` → **OK** → **OK**.
+3. Select `DL_FS_IT_SysAdmins_RW` → **OK** → **OK**.
 4. Add each Global Group to its corresponding Domain Local Group.
 
-| Global Group  | Member of                  |
-| ------------- | -------------------------- |
-| GG_ITAdmins   | DL_ITAdmins_Share_Change   |
-| GG_HelpDesk   | DL_HelpDesk_Share_Change   |
-| GG_HR         | DL_HR_Share_Change         |
-| GG_Finance    | DL_Finance_Share_Change    |
-| GG_Operations | DL_Operations_Share_Change |
+| Global Group    | Member of             |
+| --------------- | --------------------- |
+| GG_IT_SysAdmins | DL_FS_IT_SysAdmins_RW |
+| GG_IT_HelpDesk  | DL_FS_IT_HelpDesk_RW  |
+| GG_HR           | DL_FS_HR_RW           |
+| GG_Finance      | DL_FS_Finance_RW      |
+| GG_Operations   | DL_FS_Operations_RW   |
 
 ---
 
 ### **5 - Verify Group Membership**
 
 1. Open Server Manager → Tools → Active Directory Users and Computers.
-2. Navigate to `corp.test` → `CORP` → `Groups`.
-3. Open `DL_ITAdmins_Share_Change`.
-4. Verify that `GG_ITAdmins` appears under the `Members` tab.
+2. Navigate to `corp.test` → `Corp` → `Groups`.
+3. Open `DL_FS_IT_SysAdmins_RW`.
+4. Verify that `GG_IT_SysAdmins` appears under the `Members` tab.
+5. Repeat the same pattern for the rest of the departments.
+
+---
+> [!note]
+> This Lab is following Microsoft's **AGDLP** model, which is the standard way to assign permissions in a **single-domain Active Directory** environment.
+>  
+>  **A →            G →                         DL →                                     P**
+>  
+>  **Accounts → Global Groups → Domain Local Groups → Permissions**
+
+## AGDLP example
+
+```
+User: Alice
+        │
+        ▼
+      GG_SysAdmins
+        │
+        ▼
+      DL_FS_IT_SysAdmins_RW
+        │
+        ▼
+      \\DC01\SysAdmins
+```
+
 
