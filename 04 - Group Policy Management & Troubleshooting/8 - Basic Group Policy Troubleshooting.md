@@ -24,6 +24,8 @@ gpupdate /force
 gpresult /scope computer /r
 gpresult /scope user /r
 ```
+<img width="1111" height="623" alt="image" src="https://github.com/user-attachments/assets/a5805a68-a3f9-4e82-a389-fc5996ccc217" />
+<img width="1111" height="623" alt="image" src="https://github.com/user-attachments/assets/6446a798-1a89-4517-a61e-09043cef1c57" />
 
 4. Verify that **Computer Settings** or **User Settings** match the expected target.
 5. The correct **Applied Group Policy Objects** are listed.
