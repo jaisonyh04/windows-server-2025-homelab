@@ -5,7 +5,7 @@ Prevent users from using USB storage devices.
 ---
 1. Open Server Manager → Tools → Group Policy Management.
 2. Navigate to: `Forest: corp.tes`t → `Domains` → `corp.test` → `Corp` → `Computers`.
-3. Right-click `Desktops` → **Create a GPO in this domain, and Link it here...**.
+3. Right-click `Desktops` OU → **Create a GPO in this domain, and Link it here...**.
 4. Type `Disable USB Storage` and click **OK**.
 5. Right-click `Disable USB Storage` → **Edit**.
 6. Navigate to: Computer Configuration → Policies → Administrative Templates → System → Removable Storage Access.
