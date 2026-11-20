@@ -3,35 +3,36 @@
 Grant local administrator rights through Group Policy.
 
 ---
-## 1 - Create GG_Workstations
+## 1 - Create GG_LocalAdmins
 
 1. Open *Server Manager* → *Tools* → *Active Directory Users and Computers*.
-2. Navigate to: `CORP` → `Groups` → `Global`.
-3. Right-click the `Global` OU.
+2. Navigate to: `Corp` → `Groups`.
+3. Right-click the `Groups` OU.
 4. Select **New** → **Group**.
-5. Type: `GG_Workstations`.
+5. Type: `GG_LocalAdmins`.
 6. Set Group scope to `Global` and Group type to `Security` → **OK**.
-7. Add `jsmith` to `GG_Workstations`.
+7. Add `jsmith`  (`GG_IT_SysAdmins`) to `GG_LocalAdmins`.
 
 ---
 ## 2 - Create the Group Policy
 
 1. Open *Server Manager* → *Tools* → *Group Policy Management*.
-2. Navigate to: `CORP` → `Workstations`.
-3. Right-click `Workstations` → **Create a GPO in this domain, and Link it here...**.
-4. Type `Workstation-LocalAdmins` and click **OK**.****
-5. Right-click `Workstation-LocalAdmins` → **Edit**.
-6. Navigate to: Computer Configuration → Preferences → Control Panel Settings → Local Users and Groups.
-7. Right-click Local Users and Groups → **New** → **Local Group**.
+2. Navigate to: `Forest: corp.tes`t → `Domains` → `corp.test` → `Corp`.
+3. Right-click `Computers` → **Create a GPO in this domain, and Link it here...**.
+4. Type `Local Admins` and click **OK**.****
+5. Right-click `Local Admins` → **Edit**.
+6. Navigate to: *Computer Configuration* → *Preferences* → *Control Panel Settings* → Local Users and Groups.
+7. Right-click *Local Users and Groups* → **New** → **Local Group**.
 8. Configure:
 
 ```
 Action: Update
 Group Name: Administrators (built-in)
-Members: CORP\GG_Workstations
+Members: CORP\GG_LocalAdmins
 ```
 
 9. Click **OK** → **OK**.
+10. Close the Group Policy Management Editor.
 
 ---
 ## 3 - Test delegated permissions
