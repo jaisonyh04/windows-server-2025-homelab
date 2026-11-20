@@ -43,13 +43,13 @@ corp.test
 3. Fill in the first name, last name and user logon name fields.
 4. Click **Next**.
 5. Enter the password: `P@ssword123!`
-6. Disable *user must change password at next logon*, check the *Password never expires* option and click **Next** → **Finish**.
+6. Disable *user must change password at next logon*, enable *Password never expires* option and click **Next** → **Finish**.
 7. Create the following users:
 
 | First Name | Last Name | User Logon Name | Department / Role |
 | ---------- | --------- | --------------- | ----------------- |
-| John       | Smith     | jsmith          | ITAdmins          |
-| Alice      | Brown     | abrown          | ITAdmins          |
+| John       | Smith     | jsmith          | SysAdmin          |
+| Alice      | Brown     | abrown          | SysAdmin          |
 | David      | Wilson    | dwilson         | HelpDesk          |
 | Sarah      | Lee       | slee            | HelpDesk          |
 | Michael    | Johnson   | mjohnson        | HR                |
@@ -59,11 +59,4 @@ corp.test
 | Daniel     | Miller    | dmiller         | Operations        |
 | Olivia     | Garcia    | ogarcia         | Operations        |
 
-
-> [!note]
-> This Lab is following Microsoft's **AGDLP** model, which is the standard way to assign permissions in a **single-domain Active Directory** environment.
->  
->  **A →            G →                         DL →                                     P**
->  
->  **Accounts → Global Groups → Domain Local Groups → Permissions**
 
