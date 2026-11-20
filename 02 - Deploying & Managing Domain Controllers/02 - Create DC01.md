@@ -48,10 +48,15 @@ sfc /scannow
 ```
 
 ---
-## 3. Time zone
+## 3. Verify the Time zone
 
 1. Press **Win** `+` **I** → Time & language → Date & time.
 2. Check and set the time zone correctly.
+> [!IMPORTANT]
+> It is essential to verify and correctly configure the time zone in Windows Server.
+> The Kerberos authentication protocol (the standard in Windows domains) requires that the clocks on clients and domain controllers be synchronized.
+> With an incorrect time zone, correlating events across different servers or computers becomes confusing or impossible, making troubleshooting difficult.
+> If the server is set to the wrong time zone, critical backups or automatic maintenance tasks will run at inconvenient times.
 
 ---
 ## 4. Verify network connectivity
