@@ -94,7 +94,15 @@ corp.test             True
 ```
 
 ---
-## 6 - Verify Domain Connectivity
+## 6 - Move WIN11-01 to the Computers OU
+
+1. Open Server Manager → Tools → Active Directory Users and Computers.
+2. Navigate to: `corp.test` → `Computers`.
+3. Right-click the `WIN11-01` → **Move...**.
+4. Select: corp → Corp → Computers → Desktops.
+
+---
+## 7 - Verify Domain Connectivity
 
 ```powershell
 nltest /dsgetdc:corp.test
@@ -115,7 +123,7 @@ The command completed successfully
 ```
 
 
->The command **`nltest /dsgetdc:corp.test`** is used in Active Directory environments to locate an active **Domain Controller (DC)** for the specified domain (`corp.test`).
+>The command **`nltest /dsgetdc:itlab.local`** is used in Active Directory environments to locate an active **Domain Controller (DC)** for the specified domain (`corp.test`).
 
 ### What exactly does it do?
 
