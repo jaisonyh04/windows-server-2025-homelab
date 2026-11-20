@@ -4,15 +4,16 @@ Prevent users from adding or signing in with personal Microsoft accounts on doma
 
 ---
 
-1. Open Server Manager → Tools → Group Policy Management.
-2. Navigate to: `CORP` → `Workstations`.
-3. Right-click Workstations → **Create a GPO in this domain, and Link it here...**.
-4. Type `Block Personal Microsoft` accounts and click **OK**.
+1. Open *Server Manager* → *Tools* → *Group Policy Management*.
+2. Navigate to: `Forest: corp.tes`t → `Domains` → `corp.test` → `Corp`.
+3. Right-click `Computers` OU → **Create a GPO in this domain, and Link it here...**.
+4. Type `Block Personal Microsoft accounts` and click **OK**.
 5. Right-click `Block Personal Microsoft accounts` → **Edit**.
-6. Navigate to Computer Configuration → Policies → Windows Settings → Security Settings → Local Policies → Security Options → Accounts: Block Microsoft accounts.
-7. Select **Define this policy setting**.
-8. Select **Users can't add Microsoft accounts**.
-9. **Apply** → **OK**.
+6. Navigate to *Computer Configuration* → *Policies* → *Windows Settings* → *Security Settings* → *Local Policies* → *Security Options* → *Accounts: Block Microsoft accounts*.
+7. Open *Accounts: Block Microsoft accounts*.
+8. Select **Define this policy setting**.
+9. Select **Users can't add Microsoft accounts**.
+10. **Apply** → **OK**.
 
 ---
 ## Verification
