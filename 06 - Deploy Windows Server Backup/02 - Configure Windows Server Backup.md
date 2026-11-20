@@ -22,7 +22,12 @@ Install and configure Windows Server Backup on `DC01` to create scheduled backup
 7. Specify Destination Type: `Back up to a hard disk that is dedicated for backups` → **Next**.
 8. Select Destination Disk: Click **Show All Available Disk...**, select Volume `F:\` → **OK**.
 9. Confirmation: Click **Finish**.
->When you configure Windows Server Backup, if you choose "Back up to a hard disk that is dedicated for backups", Windows will reserve that disk exclusively for backups and may remove its drive letter automatically. This is expected behavior.
+
+> [!NOTE]
+> When you configure Windows Server Backup, if you choose "Back up to a hard disk that is dedicated for backups", Windows will reserve that disk exclusively for backups and may remove its drive letter automatically. This is expected behavior.
+
+<img width="975" height="509" alt="image" src="https://github.com/user-attachments/assets/c38dc807-f5cc-49aa-b835-c298afd0299f" />
+
 ---
 ## 3 - Run the First Backup
 
@@ -30,3 +35,5 @@ Install and configure Windows Server Backup on `DC01` to create scheduled backup
 2. Backup Options: *Scheduled backup options*.
 3. Click **Next** → **Backup**.
 4. Verify that the backup completes successfully.
+
+<img width="975" height="509" alt="image" src="https://github.com/user-attachments/assets/9b642668-fd18-44ef-95a2-26cda3209702" />
