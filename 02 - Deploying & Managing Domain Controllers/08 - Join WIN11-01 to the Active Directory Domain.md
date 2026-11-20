@@ -98,7 +98,7 @@ corp.test             True
 
 1. On `DC01`, open Server Manager → Tools → Active Directory Users and Computers.
 2. Navigate to: `corp.test` → `Computers`.
-3. Right-click the `WIN11-01` → **Move...**.
+3. Right-click `WIN11-01` → **Move...**.
 4. Select: corp → Corp → Computers → Desktops.
 
 ---
