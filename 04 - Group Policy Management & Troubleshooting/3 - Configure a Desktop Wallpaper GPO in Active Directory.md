@@ -69,6 +69,7 @@ Expected output:
         Desktop Wallpaper
 ```
 <img width="1275" height="763" alt="image" src="https://github.com/user-attachments/assets/c45a3214-bed2-4ee1-9928-14c5a3fdbffd" />
+<img width="1275" height="763" alt="image" src="https://github.com/user-attachments/assets/a55fa784-453c-41ee-af31-b4377f505887" />
 
 ---
 ### Why use a UNC (Universal Naming Convention) path?
