@@ -22,6 +22,7 @@ Organize users and manage permissions through security groups.
 | GG_HR           |
 | GG_Finance      |
 | GG_Operations   |
+
 Where:
 - **GG** = Global Group
 
