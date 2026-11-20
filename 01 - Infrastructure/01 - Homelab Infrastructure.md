@@ -56,7 +56,7 @@ Deployment of a virtualized Windows Server 2025 Homelab with a domain controller
 
 [https://obsidian.md/help/]()
 
-
+[https://www.youtube.com/watch?v=BTLRQ_PZwp4]()
 ---
 ### Homelab Infrastructure Layout
 
