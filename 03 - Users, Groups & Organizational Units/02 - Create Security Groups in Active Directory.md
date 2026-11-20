@@ -61,6 +61,7 @@ Where:
 | DL_FS_HR_RW           |
 | DL_FS_Finance_RW      |
 | DL_FS_Operations_RW   |
+
 Where:
 - **DL** = Domain Local
 - **FS** = File Server (resource type)
