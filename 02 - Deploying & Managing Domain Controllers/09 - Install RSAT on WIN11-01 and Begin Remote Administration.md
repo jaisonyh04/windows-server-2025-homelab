@@ -86,5 +86,5 @@ When Server Manager requests the server inventory, `DC01` generates a large WS-M
    - *Event Viewer*
 1. Perform future administration from `WIN11-01` instead of signing in directly to `DC01`.
 
-> **Note:** If you plan to use **Event Viewer** remotely, enable the **Remote Event Log Management** firewall rule group on `DC01`.
-> If you plan to use **Disk Management** remotely, enable the **Remote Volume Management** firewall rule group on `DC01`.
+> **Note:** To use **Event Viewer** remotely, enable the **Remote Event Log Management** firewall rule group on `DC01`.
+> To use **Disk Management** remotely, enable the **Remote Volume Management** firewall rule group on `DC01`.
