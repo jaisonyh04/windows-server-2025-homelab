@@ -45,3 +45,5 @@ Event Viewer
             └── GroupPolicy
                 └── Operational
 ```
+
+<img width="1275" height="763" alt="image" src="https://github.com/user-attachments/assets/09e7a1cd-ac0f-434d-9a56-053f69a20cf3" />
