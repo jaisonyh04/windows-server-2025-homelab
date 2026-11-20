@@ -25,7 +25,9 @@ gpresult /scope computer /r
 gpresult /scope user /r
 ```
 
-4. Verify that the GPO appears under `Applied Group Policy Objects`.
+4. Verify that **Computer Settings** or **User Settings** match the expected target.
+5. The correct **Applied Group Policy Objects** are listed.
+6. The GPO does not appear under **filtered out**.
 
 ---
 ## 3 - Verify the GPO configuration
