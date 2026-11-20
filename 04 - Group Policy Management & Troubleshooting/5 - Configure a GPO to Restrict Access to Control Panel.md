@@ -5,7 +5,7 @@ Prevent users from accessing the Control Panel.
 ---
 
 1. Open Server Manager → Tools → Group Policy Management.
-2. Navigate to: `CORP` → `Group Policy Objects`.
+2. Navigate to: `Forest: corp.tes`t → `Domains` → `corp.test`.
 3. Right-click `Group Policy Objects` → **New**.
 4. Type `Restrict Control Panel` and click **OK**.
 5. Right-click `Restrict Control Panel` → **Edit**.
@@ -22,15 +22,13 @@ User Configuration
 8. Select **Enabled**.
 9. Click **Apply** → **OK**.
 10. Return to Group Policy Management.
-11. Navigate to: `CORP` → `Users` → `HR`.
+11. Navigate to: `Forest: corp.tes`t → `Domains` → `corp.test` → `Corp` → `Users`.
 12. Right-click `HR` → **Link an Existing GPO...**.
 13. Select `Restrict Control Panel` → **OK**.
-14. Navigate to: `CORP` → `Users` → `Finance`.
-15. Right-click `Finance` → **Link an Existing GPO...**.
-16. Select `Restrict Control Panel` → **OK**.
-17. Navigate to: `CORP` → `Users` → `Operations`.
-18. Right-click `Operations` → **Link an Existing GPO...**.
-19. Select `Restrict Control Panel` → **OK**.
+14. Right-click `Finance` → **Link an Existing GPO...**.
+15. Select `Restrict Control Panel` → **OK**.
+16. Right-click `Operations` → **Link an Existing GPO...**.
+17. Select `Restrict Control Panel` → **OK**.
 
 ---
 ## Verification
@@ -52,4 +50,3 @@ Expected output:
     -----------------------------
         Restrict Control Panel
 ```
-<img width="1275" height="763" alt="image" src="https://github.com/user-attachments/assets/497a58c8-58a9-4030-9ba4-81a46009cb9c" />
