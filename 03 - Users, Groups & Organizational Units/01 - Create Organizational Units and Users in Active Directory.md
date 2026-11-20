@@ -14,7 +14,7 @@ Organize Active Directory objects and create user accounts based on organization
 ```
 corp.test
 └── OU=Corp                      Root of the managed structure; delegation and GPO boundary
-    ├── OU=Admins                 Privileged adm- accounts only; strict GPOs, no HelpDesk delegation
+    ├── OU=Admins                Privileged adm- accounts only; strict GPOs, no HelpDesk delegation
     ├── OU=Users                 Standard user accounts; base user GPOs (desktop, drive maps)
     │   ├── OU=IT                IT staff daily-use accounts; parent for IT-specific policy
     │   │   ├── OU=HelpDesk      Support staff; delegated password reset and unlock rights
@@ -33,6 +33,7 @@ corp.test
 > [!NOTE]
 > Domain controllers stay in the built-in `Domain Controllers` OU at the domain root, outside `Corp`, because the Default Domain Controllers Policy is linked there.
 
+<img width="1275" height="763" alt="image" src="https://github.com/user-attachments/assets/9a3e3a8e-369f-4b58-8bae-5c5b42838cdf" />
 
 ---
 ## 2 - Create the users
