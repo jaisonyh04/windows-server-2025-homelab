@@ -96,7 +96,7 @@ corp.test             True
 ---
 ## 6 - Move WIN11-01 to the Computers OU
 
-1. Open Server Manager → Tools → Active Directory Users and Computers.
+1. On `DC01`, open Server Manager → Tools → Active Directory Users and Computers.
 2. Navigate to: `corp.test` → `Computers`.
 3. Right-click the `WIN11-01` → **Move...**.
 4. Select: corp → Corp → Computers → Desktops.
