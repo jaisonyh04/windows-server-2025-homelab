@@ -5,8 +5,8 @@ Map network drives for users when they log in.
 ---
 
 1. Open Server Manager → Tools → Group Policy Management.
-2. Navigate to: `CORP` → `Users` → `HR`.
-3. Right-click `HR` → **Create a GPO in this domain, and Link it here....**
+2. Navigate to: `Forest: corp.tes`t → `Domains` → `corp.test` → `Corp` → `Users`.
+3. Right-click `HR` OU → **Create a GPO in this domain, and Link it here....**
 4. Type `DriveMapping-HR` and click **OK**.
 5. Right-click `DriveMapping-HR` → **Edit**.
 6. Navigate to User Configuration → Preferences → Window Settings.
@@ -24,18 +24,18 @@ Show this drive
 11. Click **New Item** → **Security Group**.
 12. Click **Group ...** selection button.
 13. Type `dl`, click **Check Names**.
-14. Select `DL_HR_Share_Change` and click **OK**.
+14. Select `DL_FS_HR_RW` and click **OK**.
 15. Click **OK** to close the remaining dialogs.
 16. Return to Group Policy Management.
 17. Repeat the same pattern for the rest of the departments:
 
-| Group                          | GPO                       | Drive | Share location      |
-| ------------------------------ | ------------------------- | ----- | ------------------- |
-| **DL_ITAdmins_Share_Change**   | `DriveMapping-ITAdmins`   | `P`   | `\\DC01\ITAdmins`   |
-| **DL_HelpDesk_Share_Change**   | `DriveMapping-HelpDesk`   | `P`   | `\\DC01\HelpDesk`   |
-| **DL_HR_Share_Change**         | `DriveMapping-HR`         | `P`   | `\\DC01\HR`         |
-| **DL_Finance_Share_Change**    | `DriveMapping-Finance`    | `P`   | `\\DC01\Finance`    |
-| **DL_Operations_Share_Change** | `DriveMapping-Operations` | `P`   | `\\DC01\Operations` |
+| Group                     | GPO                       | Drive | Share location      |
+| ------------------------- | ------------------------- | ----- | ------------------- |
+| **DL_FS_IT_SysAdmins_RW** | `DriveMapping-SysAdmins`  | `P`   | `\\DC01\SysAdmins`  |
+| **DL_FS_IT_HelpDesk_RW**  | `DriveMapping-HelpDesk`   | `P`   | `\\DC01\HelpDesk`   |
+| **DL_FS_HR_RW**           | `DriveMapping-HR`         | `P`   | `\\DC01\HR`         |
+| **DL_FS_Finance_RW**      | `DriveMapping-Finance`    | `P`   | `\\DC01\Finance`    |
+| **DL_FS_Operations_RW**   | `DriveMapping-Operations` | `P`   | `\\DC01\Operations` |
 
 ---
 ## Verification
@@ -54,9 +54,9 @@ Expected output:
 ```
  Applied Group Policy Objects
     -----------------------------
-        DriveMapping-ITAdmins
+        DriveMapping-SysAdmins
 ```
-<img width="1276" height="764" alt="image" src="https://github.com/user-attachments/assets/1dc47d33-9634-4b0e-8443-5eddac194148" />
 
+<img width="1275" height="763" alt="image" src="https://github.com/user-attachments/assets/8c8bbfca-c696-471b-9ce1-e96f7c5f52c2" />
 
 
