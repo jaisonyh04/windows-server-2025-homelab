@@ -29,6 +29,8 @@ C:\File-sharing
 5. Remove `Everyone `group. Add `DL_FS_IT_SysAdmins_RW`.
 6. Set the Share Permissions to `Change`.
 7. Click **OK** → **OK**.
+8. Repeat the same pattern for `HelpDesk`, `HR`, `Finance` and `Operations` folders.
+
 
 ---
 ### 3 - Configure NTFS Security Permissions
