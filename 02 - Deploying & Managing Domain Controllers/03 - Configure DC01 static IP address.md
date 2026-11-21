@@ -2,8 +2,11 @@
 
 Assign a permanent IP address to `DC01`.
 
+> [!IMPORTANT]
+> A Domain Controller requires a static IP address because all domain clients depend on it for DNS, authentication, and Active Directory services. If the IP address changes, clients may be unable to locate the Domain Controller, causing logon failures, Group Policy issues, and other domain service disruptions. A static IP ensures the server is always reachable at the same address.
+
 ---
-## Configure the static IP address
+## 1 - Configure the static IP address
 
 1. Open: *Settings* → *Network & internet* → *Advanced network settings*.
 2. Click **Ethernet** → **More adapter options** → **Edit**.
@@ -21,7 +24,7 @@ Preferred DNS server: 10.10.10.1   ← temporal
 <img width="1052" height="680" alt="image" src="https://github.com/user-attachments/assets/69982443-77f3-4d61-a0a6-edcdf1d8c444" />
 
 ---
-## Verify network connectivity
+## 2 - Verify Network Configuration
 
 Run powershell as administrador:
 
@@ -32,13 +35,19 @@ Get-NetIPConfiguration
 Expected output:
 
 ```
-InterfaceAlias: Ethernet
-IPv4 address: 10.10.10.10
-IPv4DefaultGateway: 10.10.10.1
-DNSServer: 10.10.10.1
+InterfaceAlias       : Ethernet
+InterfaceIndex       : 4
+InterfaceDescription : Intel(R) 82574L Gigabit Network Connection
+NetProfile.Name      : Network
+IPv4Address          : 10.10.10.10
+IPv6DefaultGateway   :
+IPv4DefaultGateway   : 10.10.10.1
+DNSServer            : 10.10.10.1
 ```
 
-Then:
+---
+## 3 - Verify Network Connectivity
+
 
 ```
 Test-NetConnection 10.10.10.1
