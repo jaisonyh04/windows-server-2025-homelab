@@ -94,12 +94,13 @@ corp.test             True
 ```
 
 ---
-## 6 - Move WIN11-01 to the Computers OU [IMPORTANT]
+## 6 - Move WIN11-01 to the correct OU [IMPORTANT]
 
 1. On `DC01`, open *Server Manager* → *Tools* → *Active Directory Users and Computers*.
 2. Navigate to: `corp.test` → `Computers`.
 3. Right-click `WIN11-01` → **Move...**.
 4. Select: `corp` → `Corp` → `Computers` → `Desktops`.
+5. Double-click `WIN11-01` and enter a description.
 
 ---
 ## 7 - Verify Connectivity with the Domain
