@@ -94,7 +94,7 @@ corp.test             True
 ```
 
 ---
-## 6 - Move WIN11-01 to the Computers OU
+## 6 - Move WIN11-01 to the Computers OU [IMPORTANT]
 
 1. On `DC01`, open *Server Manager* → *Tools* → *Active Directory Users and Computers*.
 2. Navigate to: `corp.test` → `Computers`.
@@ -102,43 +102,28 @@ corp.test             True
 4. Select: `corp` → `Corp` → `Computers` → `Desktops`.
 
 ---
-## 7 - Verify Domain Connectivity
+## 7 - Verify Connectivity with the Domain
 
-```powershell
-nltest /dsgetdc:corp.test
-```
-
-Expected output:
+1. Open powershell and run: 
 
 ```
-  DC: \\DC01.corp.test
-      Address: \\10.10.10.10
-     Dom Guid: 5e56184d-991a-45aa-ae28-a0b7b4a9eab9
-     Dom Name: corp.test
-  Forest Name: corp.test
- Dc Site Name: Default-First-Site-Name
-Our Site Name: Default-First-Site-Name
-        Flags: PDC GC DS LDAP KDC TIMESERV GTIMESERV WRITABLE DNS_DC DNS_DOMAIN DNS_FOREST CLOSE_SITE FULL_SECRET WS DS_8 DS_9 DS_10 KEYLIST DS_13
-The command completed successfully
+ping DC01
 ```
 
+Expected Output:
 
->The command **`nltest /dsgetdc:itlab.local`** is used in Active Directory environments to locate an active **Domain Controller (DC)** for the specified domain (`corp.test`).
+```
+PS C:\WINDOWS\system32> ping DC01
 
-### What exactly does it do?
+Pinging dc01.corp.test [10.10.10.10] with 32 bytes of data:
+Reply from 10.10.10.10: bytes=32 time<1ms TTL=128
+Reply from 10.10.10.10: bytes=32 time=1ms TTL=128
+Reply from 10.10.10.10: bytes=32 time<1ms TTL=128
+Reply from 10.10.10.10: bytes=32 time<1ms TTL=128
 
-1. **Queries the directory service (DS):** It instructs the NetLogon tool (`nltest`) to send a request to find an available Domain Controller (DC) for the `corp.test` domain.
-2. **Uses DNS and network protocols:** Queries the DNS SRV records to locate which server on the network holds the authentication and domain control roles for that domain name.
+Ping statistics for 10.10.10.10:
+    Packets: Sent = 4, Received = 4, Lost = 0 (0% loss),
+Approximate round trip times in milli-seconds:
+    Minimum = 0ms, Maximum = 1ms, Average = 0ms
+```
 
-### What information does it return if successful?
-
-When the command runs successfully on a machine joined to the domain (or one that has connectivity and the correct DNS configuration for the domain), it displays key information such as:
-
-- **DC (Domain Controller):** The name of the responding server (for example, `\\DC01`).
-- **Address:** The IP address of the domain controller (`\\10.10.10.10`).
-- **Domain GUID and Domain Name:** Confirmation of the verified domain.
-- **Flags:** Features and services available on that server (such as Global Catalog server, PDC, etc.).
-
-### What is it used for?
-
-This is the standard quick diagnostic command to check whether a computer **has actual communication and can locate** its Active Directory server on the network. If it fails, it usually indicates a problem with DNS resolution, network connectivity, or that the computer is not properly joined to the domain.
