@@ -20,7 +20,6 @@ Deploy the primary Domain Controller.
 | **OS**       | Windows Server 2025 Standard Evaluation (Desktop Experience) |
 
 ---
-
 ## 1. Rename PC
 
 1. Press **Win `+` I** → **Home** → **Rename**.
@@ -35,11 +34,19 @@ Deploy the primary Domain Controller.
 sfc /scannow
 ```
 
+> [!NOTE]
+> What it does:
+> Scans all protected Windows system files and automatically repairs corrupted or missing files using the local Windows component store (WinSxS).
+
 2. If fails run:
 
 ```
 DISM /Online /Cleanup-Image /RestoreHealth
 ```
+
+> [!NOTE]
+> What it does:
+> Checks the Windows component store (WinSxS) for corruption and repairs it by downloading healthy files from Windows Update (or another configured repair source).
 
 Run again: 
 
@@ -48,10 +55,11 @@ sfc /scannow
 ```
 
 ---
-## 3. Verify the Time zone
+## 3. Verify Time zone
 
 1. Press **Win** `+` **I** → Time & language → Date & time.
 2. Check and set the time zone correctly.
+
 > [!IMPORTANT]
 > It is essential to verify and correctly configure the time zone in Windows Server.
 > The Kerberos authentication protocol (the standard in Windows domains) requires that the clocks on clients and domain controllers be synchronized.
@@ -120,6 +128,8 @@ TcpTestSucceeded : True
 ## 7. Verify Device Manager
 
 - Make sure there are no important devices marked with ⚠️ or `Unknown device`.
+
+
 
 
 
