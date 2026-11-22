@@ -59,14 +59,14 @@ corp.test                                      A      600   Answer     10.10.10.
 3. Select: Domain.
 4. Enter: `corp.test`.
 5. Click **OK**.
-6. Username: `CORP\Administrator`, Password: `P@ssword456!`.
+6. Username: `jaison-admin@corp.test`, Password: `XXXXXXXXXXX!`.
 7. Expected: Welcome to the corp.test domain.
 8. Restart.
 ---
 ## 4 - Log On with a Domain Account
 
 1. Select: `Other User`
-2. Sign in using: Username: `CORP\Administrator`, Password: `P@ssword456!`.
+2. Sign in using: Username: `jaison-admin@corp.test`, Password: `XXXXXXXXXXX!`.
 
 ---
 ## 5 - Verify Domain Membership
@@ -96,10 +96,10 @@ corp.test             True
 ---
 ## 6 - Move WIN11-01 to the Computers OU
 
-1. On `DC01`, open Server Manager → Tools → Active Directory Users and Computers.
+1. On `DC01`, open *Server Manager* → *Tools* → *Active Directory Users and Computers*.
 2. Navigate to: `corp.test` → `Computers`.
 3. Right-click `WIN11-01` → **Move...**.
-4. Select: corp → Corp → Computers → Desktops.
+4. Select: `corp` → `Corp` → `Computers` → `Desktops`.
 
 ---
 ## 7 - Verify Domain Connectivity
