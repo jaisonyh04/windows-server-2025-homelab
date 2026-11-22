@@ -43,7 +43,7 @@ corp.test
 3. Fill in the first name, last name and user logon name fields.
 4. Click **Next**.
 5. Enter the password: `XXXXXXXXXXX!`
-6. Disable *user must change password at next logon*, enable *Password never expires* option and click **Next** → **Finish**.
+6. For simplicity, disable *user must change password at next logon*, enable *Password never expires* option and click **Next** → **Finish**.
 7. Create the following users:
 
 | First Name | Last Name | User Logon Name | Department / Role |
