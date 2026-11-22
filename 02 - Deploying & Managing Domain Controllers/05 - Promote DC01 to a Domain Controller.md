@@ -23,7 +23,7 @@ Create the `corp.test` Active Directory domain by promoting `DC01` to a Domain C
 3. Domain Name System (DNS): Enabled
 4. Global Catalog (GC): Enabled
 5. Read Only Domain Controller (RODC): Disabled
-6. Directory Services Restore Mode (DSRM): `P@ssword789!`
+6. Directory Services Restore Mode (DSRM): `XXXXXXXXXXX!`
 7. Click **Next**.
 
 > This password is only used for Active Directory recovery.
@@ -72,7 +72,7 @@ Create the `corp.test` Active Directory domain by promoting `DC01` to a Domain C
 ## 10 - Log On
 
 1. After the restart, log in using: `CORP\Administrator`
-2. Password: `P@ssword456!`
+2. Password: `XXXXXXXXXXX!`
 
 ---
 ## 11- Configure DNS Server
