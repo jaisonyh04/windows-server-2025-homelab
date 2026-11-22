@@ -26,7 +26,7 @@ Create a separate privileged account for administration and keep the **built-in 
 5. For simplicity, disable *user must change password at next logon*, enable *Password never expires* option and click **Next** → **Finish**.
 
 ---
-## 3 - Add the account to Domain Admins
+## 3 - Add the Account to Domain Admins
 
 1. Right-click `Jaison Hernandez` user → **Properties**.
 2. Click **Member Of** → **Add...**.
@@ -43,3 +43,4 @@ Administrator
 jaison-admin
 ```
 
+<img width="1278" height="766" alt="image" src="https://github.com/user-attachments/assets/1e9edb7c-20a1-4631-b392-82f386525887" />
