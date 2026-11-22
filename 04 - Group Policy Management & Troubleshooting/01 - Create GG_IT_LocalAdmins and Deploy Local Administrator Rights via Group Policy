@@ -9,9 +9,9 @@ Grant local administrator rights through Group Policy.
 2. Navigate to: `Corp` → `Groups`.
 3. Right-click the `Groups` OU.
 4. Select **New** → **Group**.
-5. Type: `GG_LocalAdmins`.
+5. Type: `GG_IT_LocalAdmins`.
 6. Set Group scope to `Global` and Group type to `Security` → **OK**.
-7. Add `jsmith`  (`GG_IT_SysAdmins`) to `GG_LocalAdmins`.
+7. Add `jsmith`  (`GG_IT_SysAdmins`) to `GG_IT_LocalAdmins`.
 
 ---
 ## 2 - Create the Group Policy
@@ -28,7 +28,7 @@ Grant local administrator rights through Group Policy.
 ```
 Action: Update
 Group Name: Administrators (built-in)
-Members: CORP\GG_LocalAdmins
+Members: CORP\GG_IT_LocalAdmins
 ```
 
 9. Click **OK** → **OK**.
