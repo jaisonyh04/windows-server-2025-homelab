@@ -22,7 +22,7 @@ To use Remote Server Administration Tools, you need the following prerequisites:
 ---
 ## 1 - Install RSAT (Remote Server Administration Tools)
 
-1. On `WIN11-01` sign in as `CORP\Administrator`.
+1. On `WIN11-01` sign in as `jaison-admin@corp.test`.
 2. Go to Settings → System → Optional features → View features → See available features.
 3. Install:
 - *RSAT: Active Directory Domain Services and Lightweight Directory Services Tools*
@@ -43,7 +43,7 @@ To use Remote Server Administration Tools, you need the following prerequisites:
 
 When Server Manager requests the server inventory, `DC01` generates a large WS-Management response (roles, features, services, performance data, etc.). On Windows Server 2025, the default `500 KB` envelope appears to be too small for that response. Increasing the server's `MaxEnvelopeSizeKb` allows it to process and return the larger payload successfully.
 
-1. Sign in to `DC01` and `WIN11-01` as `CORP\Administrator`.
+1. Sign in to `DC01` and `WIN11-01` as `jaison-admin@corp.test`.
 2. Open PowerShell and run:
 
    ```powershell
