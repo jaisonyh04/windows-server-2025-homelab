@@ -34,11 +34,19 @@ Deploy the primary Windows 11 client.
 sfc /scannow
 ```
 
+> [!NOTE]
+> What it does:
+> Scans all protected Windows system files and automatically repairs corrupted or missing files using the local Windows component store (WinSxS).
+
 2. If fails run:
 
 ```
 DISM /Online /Cleanup-Image /RestoreHealth
 ```
+
+> [!NOTE]
+> What it does:
+> Checks the Windows component store (WinSxS) for corruption and repairs it by downloading healthy files from Windows Update (or another configured repair source).
 
 Run again: 
 
