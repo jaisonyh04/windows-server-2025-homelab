@@ -64,4 +64,29 @@ C:\File-sharing
 
 <img width="1275" height="763" alt="image" src="https://github.com/user-attachments/assets/5f800d3d-aa55-403b-9833-2fe10ca7169d" />
 
+---
+### 5 - SMB Administrative Shares
+
+Windows automatically creates hidden administrative shares such as `C$`, `ADMIN$`, and `IPC$` for remote system administration.
+
+Administrators can access a remote computer's `C:` drive using its UNC path:
+
+```
+\\WIN11-01\C$
+```
+
+**Requirements:**
+
+- Administrative privileges on the remote computer.
+- Network connectivity and SMB access (TCP 445).
+- Windows Firewall configured to allow the required SMB traffic.
+
+**Verification (PowerShell):**
+
+```
+Get-SmbShare -Special $true
+Test-NetConnection WIN11-01 -Port 445
+```
+
+**Security:** Administrative shares should only be accessible to authorized administrators. The `$` hides the share from normal browsing but does not provide security by itself.
 
