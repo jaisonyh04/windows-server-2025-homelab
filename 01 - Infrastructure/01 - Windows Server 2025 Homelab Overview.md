@@ -18,6 +18,8 @@ Deployment of a virtualized Windows Server 2025 Homelab with a domain controller
 
 - corp.test (NAT)
 - 10.10.10.0/24
+<img width="799" height="628" alt="image" src="https://github.com/user-attachments/assets/f1df4edc-e473-46b5-8a39-06143ac245da" />
+
 ---
 ## Domain
 
