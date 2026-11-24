@@ -38,5 +38,3 @@ Add and configure a dedicated virtual disk for backup storage on `DC01`.
 11. Confirmation: **Create** → **Close**.
 12. Verify that the new **Backup (F:)** volume appears under **Volumes** and in **File Explorer**.
 
-> [!NOTE]
-> When you configure Windows Server Backup, if you choose "Back up to a hard disk that is dedicated for backups", Windows will reserve that disk exclusively for backups and may remove its drive letter automatically. This is expected behavior.
