@@ -15,6 +15,7 @@ Add and configure a dedicated virtual disk for backup storage on `DC01`.
 9. Bus Type: VirtIO.
 10. Click **Finish** and start the VM.
 
+<img width="1278" height="863" alt="image" src="https://github.com/user-attachments/assets/c343ac18-0caf-4d97-947a-caf798bc0473" />
 
 
 ---
