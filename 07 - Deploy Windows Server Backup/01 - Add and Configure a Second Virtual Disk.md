@@ -15,6 +15,8 @@ Add and configure a dedicated virtual disk for backup storage on `DC01`.
 9. Bus Type: VirtIO.
 10. Click **Finish** and start the VM.
 
+
+
 ---
 ## 2 - Configure the Virtual Disk in Windows Server
 
@@ -32,7 +34,8 @@ Add and configure a dedicated virtual disk for backup storage on `DC01`.
  - Allocation Unit Size: `Default`
  - Volume Label: `Backup`
  - **Next**
-1. Confirmation: **Create** → **Close**.
-2. Verify that the new **Backup (F:)** volume appears under **Volumes** and in **File Explorer**.
+11. Confirmation: **Create** → **Close**.
+12. Verify that the new **Backup (F:)** volume appears under **Volumes** and in **File Explorer**.
 
->When you configure Windows Server Backup, if you choose "Back up to a hard disk that is dedicated for backups", Windows will reserve that disk exclusively for backups and may remove its drive letter automatically. This is expected behavior.
+> [!NOTE]
+> When you configure Windows Server Backup, if you choose "Back up to a hard disk that is dedicated for backups", Windows will reserve that disk exclusively for backups and may remove its drive letter automatically. This is expected behavior.
