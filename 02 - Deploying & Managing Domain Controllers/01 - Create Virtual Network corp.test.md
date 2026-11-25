@@ -1,6 +1,6 @@
 ### Purpose
 
-Create an isolated network for the homelab.
+Create a private virtual network for the homelab, allowing communication between virtual machines and outbound Internet access through NAT.
 
 ---
 ## 1 - Create the Virtual Network
@@ -12,7 +12,7 @@ Create an isolated network for the homelab.
 ```
 Name: corp.test
 Mode: NAT
-Forwar to: Any physical device
+Forward to: Any physical device
 
 IPv4 configuration:
 
@@ -38,7 +38,7 @@ After deploying `DC01` run powershell as administrador:
 Get-NetIPConfiguration
 ```
 
-Expected output:
+Example output:
 
 ```
 InterfaceAlias       : Ethernet
@@ -57,7 +57,7 @@ Then:
 ipconfig /all
 ```
 
-Expected output:
+Example output:
 
 ```
 Windows IP Configuration

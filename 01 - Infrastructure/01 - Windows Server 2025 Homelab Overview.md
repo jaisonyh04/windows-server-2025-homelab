@@ -16,8 +16,11 @@ Deployment of a virtualized Windows Server 2025 Homelab with a domain controller
 ---
 ## Virtual Network
 
-- corp.test (NAT)
-- 10.10.10.0/24
+- `corp.test` NAT networking.
+- Private subnet `10.10.10.0/24`.
+- DHCP range `10.10.10.100–10.10.10.200`.
+- Gateway `10.10.10.1`.
+- Static server address outside the DHCP pool.
 <img width="799" height="628" alt="image" src="https://github.com/user-attachments/assets/f1df4edc-e473-46b5-8a39-06143ac245da" />
 
 ---
