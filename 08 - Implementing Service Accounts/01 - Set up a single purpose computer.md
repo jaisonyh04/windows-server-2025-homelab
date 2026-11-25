@@ -31,7 +31,7 @@ Dedicated service account for automatic logon and website display.
 ```
 
 ---
-## 2 - Create and Configure the client
+## 2 - Create a new client
 
 1. Create a new Windows Pro or Enterprise client.
 2. Rename it `KIOSK-01`.
