@@ -51,10 +51,10 @@ To use Remote Server Administration Tools, you need the following prerequisites:
 > [!NOTE]  
 > **Firewall requirements**
 > 
->- **Server Manager / PowerShell Remoting:** WinRM requires inbound TCP port `5985` on `DC01` for the default HTTP listener.
+>- **Windows Remote Management (HTTP-In):** This rule allows incoming WinRM connections over TCP port `5985`.
 >- **Event Viewer:** Remote event log access may require the **Remote Event Log Management** firewall rule group.
->- **Computer Management:** Certain functions require additional RPC, WMI, or Remote Service Management firewall rules.
+>- **Computer Management:** Certain functions require additional RPC, WMI, or **Remote Service Management** firewall rules.
 >- **Disk Management:** Remote disk administration may require the **Remote Volume Management** firewall rule group and supporting services.
->- **Core Network Diagnostics – ICMP Echo Request (ICMPv4-In)**: This Allow ICMP traffic for network connectivity testing.
+>- **Core Network Diagnostics – ICMP Echo Request (ICMPv4-In)**: Allows incoming ICMPv4 Echo Requests for network connectivity testing.
 
 

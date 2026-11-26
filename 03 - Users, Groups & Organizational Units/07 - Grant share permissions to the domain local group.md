@@ -44,6 +44,13 @@ C:\File-sharing
 5. Grant it `read`/`write` permissions. Click **OK** → **Close**.
 6. Repeat the same pattern for `HelpDesk`, `HR`, `Finance` and `Operations` folders.
 
+
+
+> [!NOTE]
+> When accessing a shared folder over the network, both SMB and NTFS permissions apply. 
+> The effective access is the more restrictive combination.
+> 
+
 ---
 ### 4 - Test delegated permissions
 
@@ -51,10 +58,11 @@ C:\File-sharing
 2. Open File Explorer.
 3. In the `Address bar` enter: `\\DC01.corp.test\`
 4. `jsmith` (`SysAdmins`) should **NOT** have access to `HelpDesk`, `HR`, `Finance` or `Operations` folders.
+5. Verify that `jsmith` can create, read, and modify files in the `SysAdmins` shared folder but cannot delete them. 
 
 | Folder     | jsmith (ITAdmins)   |
 | ---------- | ------------------- |
-| SysAdmins  | ==🟢Modify==        |
+| SysAdmins  | ==🟢read/write==    |
 | HelpDesk   | ==🔴Access Denied== |
 | HR         | ==🔴Access Denied== |
 | Finance    | ==🔴Access Denied== |
@@ -69,7 +77,7 @@ C:\File-sharing
 
 Windows automatically creates hidden administrative shares such as `C$`, `ADMIN$`, and `IPC$` for remote system administration.
 
-Administrators can access a remote computer's `C:` drive using its UNC path:
+Administrators can access a remote computer's `C:` drive using its **UNC** path:
 
 ```
 \\WIN11-01\C$
@@ -81,12 +89,26 @@ Administrators can access a remote computer's `C:` drive using its UNC path:
 - Network connectivity and SMB access (TCP 445).
 - Windows Firewall configured to allow the required SMB traffic.
 
-**Verification (PowerShell):**
+Verification (PowerShell):
+
+On `WIN11-01`:
 
 ```
 Get-SmbShare -Special $true
+```
+
+Lists the special SMB shares on the local computer.
+
+On `DC01`:
+
+```
 Test-NetConnection WIN11-01 -Port 445
 ```
 
-**Security:** Administrative shares should only be accessible to authorized administrators. The `$` hides the share from normal browsing but does not provide security by itself.
+Verifies SMB TCP connectivity to `WIN11-01`.
+
+
+> [!NOTE]
+> Administrative shares should only be accessible to authorized administrators. 
+> The `$` hides the share from normal browsing but does not provide security by itself.
 

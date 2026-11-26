@@ -1,6 +1,6 @@
 ### Purpose
 
-Deploy the primary Domain Controller.
+Deploy and prepare `DC01` for its future role as the primary Domain Controller.
 
 ---
 ## VM Configuration
@@ -12,7 +12,7 @@ Deploy the primary Domain Controller.
 | **CPU**      | 4 vCPU/host-passthrough                                      |
 | **RAM**      | 6144 MiB                                                     |
 | **Disk**     | VirtIO, 120 GiB                                              |
-| **Storage**  | Add Harware/Storage/CDROM device/SATA/virtio-win.iso         |
+| **Storage**  | Add Hardware/Storage/CDROM device/SATA/virtio-win.iso        |
 | **Network**  | Virtual network `corp.test`                                  |
 | **Video**    | Virtio                                                       |
 | **Display**  | SPICE                                                        |
@@ -24,27 +24,25 @@ Deploy the primary Domain Controller.
 > The `viostor` driver is used for VirtIO block storage, while `vioscsi` is used for VirtIO SCSI.
 
 ---
-## 1. Rename PC
+## 1. Rename the Server
 
 1. Press **Win `+` I** → **Home** → **Rename**.
 2. Type: `DC01`.
 3. Restart.
 ---
-## 2. Verify Time zone
+## 2. Verify Time Zone
 
 1. Press **Win** `+` **I** → Time & language → Date & time.
 2. Check and set the time zone correctly.
 
 ---
-## 3. Verify network connectivity
+## 3. Verify external IP connectivity
 
-- Run powershell as administrador:
+- Run powershell as administrator:
 
 ```
 ping 1.1.1.1
 ```
-
->Check the IP connection to the Internet.
 
 Example output:
 
@@ -71,8 +69,10 @@ Approximate round trip times in milli-seconds:
 ---
 ## 5. Update Windows
 
-1. Press **Win** `+` **I** → Windows Updates.
+1. Press **Win** `+` **I** → Windows Update.
 2. `Check for updates`.
+3. Install all applicable updates and restart the server if required.
+4. Check for updates again to verify that no applicable updates remain pending.
 
 ---
 ## 6. Verify Device Manager

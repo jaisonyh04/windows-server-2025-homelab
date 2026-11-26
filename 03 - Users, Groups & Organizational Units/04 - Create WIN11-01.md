@@ -5,19 +5,19 @@ Deploy the primary Windows 11 client.
 ---
 ## VM Configuration
 
-| Hardware     | Configuration                                        |
-| ------------ | ---------------------------------------------------- |
-| **Chipset**  | Q35                                                  |
-| **Firmware** | UEFI / OVMF_CODE.secboot                             |
-| **CPU**      | 4 vCPU / host-passthrough                            |
-| **RAM**      | 4096 MiB                                             |
-| **Disk**     | VirtIO, 120 GiB                                      |
-| **Storage**  | Add Harware/Storage/CDROM device/SATA/virtio-win.iso |
-| **Network**  | Virtual network `corp.test`                          |
-| **Video**    | Virtio                                               |
-| **Display**  | SPICE                                                |
-| **TPM**      | Emulated / 2.0 / CRB                                 |
-| **OS**       | Windows 11 Pro                                       |
+| Hardware     | Configuration                                         |
+| ------------ | ----------------------------------------------------- |
+| **Chipset**  | Q35                                                   |
+| **Firmware** | UEFI / OVMF_CODE.secboot                              |
+| **CPU**      | 4 vCPU / host-passthrough                             |
+| **RAM**      | 4096 MiB                                              |
+| **Disk**     | VirtIO, 120 GiB                                       |
+| **Storage**  | Add Hardware/Storage/CDROM device/SATA/virtio-win.iso |
+| **Network**  | Virtual network `corp.test`                           |
+| **Video**    | Virtio                                                |
+| **Display**  | SPICE                                                 |
+| **TPM**      | Emulated / 2.0 / CRB                                  |
+| **OS**       | Windows 11 Pro                                        |
 > [!NOTE]
 > During Windows installation, if the virtual disk is not detected, select **Load driver**, browse the VirtIO driver ISO, and load the appropriate storage driver for the configured virtual storage controller.
 > The `viostor` driver is used for VirtIO block storage, while `vioscsi` is used for VirtIO SCSI.
@@ -30,27 +30,19 @@ Deploy the primary Windows 11 client.
 3. Restart.
 
 ---
-## 2. Time zone
+## 2. Time Zone
 
 1. Press **Win** `+` **I** → Time & language → Date & time.
 2. Check and set the time zone correctly.
 
 ---
-## 3. Verify network connectivity
+## 3. Verify external IP connectivity
 
-- Run powershell as administrador:
+- Run powershell as administrator:
 
 ```
 ping 1.1.1.1
 ```
-
->Check the IP connection to the Internet.
-
-```
-Resolve-DnsName google.com
-```
-
->Test DNS resolution
 
 ---
 ## 4. Install VirtIO Guest Tools
@@ -62,8 +54,10 @@ Resolve-DnsName google.com
 ---
 ## 5. Update Windows
 
-1. Press **Win** `+` **I** → Windows Updates.
+1. Press **Win** `+` **I** → Windows Update.
 2. `Check for updates`.
+3. Install all applicable updates and restart the PC if required.
+4. Check for updates again to verify that no applicable updates remain pending.
 
 ---
 ## 6. Verify Device Manager

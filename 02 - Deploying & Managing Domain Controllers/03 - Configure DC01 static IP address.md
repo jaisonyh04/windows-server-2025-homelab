@@ -16,17 +16,20 @@ Assign a permanent IP address to `DC01`.
 ```
 IP address: 10.10.10.10
 Subnet mask: 255.255.255.0
-DefaultGateway: 10.10.10.1
+Default gateway: 10.10.10.1
 Preferred DNS server: 10.10.10.10
 ```
 
 5. Click **OK** → **Close**.
+
+> [!NOTE]  
+> External DNS resolution may temporarily fail until the DNS Server role is installed and configured on `DC01`.
 <img width="1052" height="680" alt="image" src="https://github.com/user-attachments/assets/69982443-77f3-4d61-a0a6-edcdf1d8c444" />
 
 ---
 ## 2 - Verify Network Configuration
 
-Run powershell as administrador:
+Run powershell as administrator:
 
 ```
 Get-NetIPConfiguration
@@ -45,6 +48,25 @@ IPv4DefaultGateway   : 10.10.10.1
 DNSServer            : 10.10.10.10
 ```
 
+---
+## 3 - Verify Network Connectivity
+
+```
+Test-NetConnection 10.10.10.1
+```
+
+Example output:
+
+```
+ComputerName           : 10.10.10.1                                                                                    
+RemoteAddress          : 10.10.10.1                                
+InterfaceAlias         : Ethernet
+SourceAddress          : 10.10.10.10
+PingSucceeded          : True
+PingReplyDetails (RTT) : 0 ms
+```
+
+
 
 > [!IMPORTANT]
-> In an Active Directory domain, **all computers in the domain, including the domain controller, must use Active Directory DNS**. Internet access is achieved through **forwarders** configured in the DNS service, not by configuring public DNS servers on the network interfaces.
+> In an Active Directory domain, **all computers in the domain, including the domain controller, must use Active Directory DNS**.

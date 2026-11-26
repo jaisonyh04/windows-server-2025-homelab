@@ -1,7 +1,7 @@
 ### Purpose
 
 Join the client to the `corp.test` domain.
-Dedicated administrative workstation.
+Configure `WIN11-01` as a dedicated administrative workstation.
 
 ---
 ## 1 - Configure DNS Server
@@ -89,13 +89,13 @@ The command completed successfully
 ## 5 - Log On with a Domain Account
 
 1. Select: `Other User`
-2. Sign in using: Username: `jaison-admin@corp.test`, Password: `XXXXXXXXXXX!`.
+2. Sign in using: Username: `jaison-admin@corp.test`, Password: `<ADM_PASSWORD>`.
 
 ---
 ## 6 - Verify Domain Membership
 
 1. Open: Settings → System → About → **Domain or workgroup**.
-2. Run powershell as administrador:
+2. Run PowerShell as administrator:
 
 ```
 systeminfo
@@ -119,7 +119,7 @@ corp.test             True
 ---
 ## 7 - Verify Connectivity with the Domain
 
-1. Open powershell and run: 
+1. Open PowerShell and run: 
 
 ```
 ping DC01
@@ -145,7 +145,7 @@ Approximate round trip times in milli-seconds:
 ---
 ## 8 - Verify the computer's trust relationship with Active Directory
 
-Open powershell and run: 
+Open PowerShell and run: 
 
 ```
 Test-ComputerSecureChannel -Verbose
@@ -163,6 +163,6 @@ True
 1. On `DC01`, open *Server Manager* → *Tools* → *Active Directory Users and Computers*.
 2. Navigate to: `corp.test` → `Computers` (This is the default container).
 3. Right-click `WIN11-01` → **Move...**.
-4. Select: `corp` → `Corp` → `Computers` → `Desktops`.
+4. Select: `corp.test` → `Corp` → `Computers` → `Desktops`
 5. Double-click `WIN11-01` and enter a description.
 

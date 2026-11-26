@@ -18,22 +18,28 @@ Create the `corp.test` Active Directory domain by promoting `DC01` to a Domain C
 ---
 ## 3 - Domain Controller Options
 
-1. Forest functional level: Windows Server 2025
-2. Domain functional level: Windows Server 2025
-3. Domain Name System (DNS): Enabled
-4. Global Catalog (GC): Enabled
-5. Read Only Domain Controller (RODC): Disabled
-6. Directory Services Restore Mode (DSRM): `<DSRM_PASSWORD>`
+1. Forest functional level: `Windows Server 2025`.
+2. Domain functional level: `Windows Server 2025`.
+
+> [!NOTE]  
+> The Windows Server 2025 forest and domain functional levels enable the latest Active Directory capabilities but do not support domain controllers running earlier versions of Windows Server. This restriction does not affect domain-joined workstations or member servers.
+
+3. Domain Name System (DNS): `Enabled`.
+4. Global Catalog (GC): `Enabled`.
+5. Read Only Domain Controller (RODC): `Disabled`.
+6. Directory Services Restore Mode (DSRM): `<DSRM_PASSWORD>`.
 7. Click **Next**.
 
-> This password is only used for Active Directory recovery.
+> [!important]
+> The Directory Services Restore Mode (DSRM) password is used to access the Domain Controller when Active Directory Domain Services is offline for maintenance or recovery.
 
 ---
 ## 4 - DNS Options
 
 1. A warning similar to the following is expected: *A delegation for this DNS server cannot be created...*
-2. This is expected because this is the first Domain Controller.
+2. This warning is expected because `corp.test` is a new forest root domain without an existing parent DNS zone in which a delegation can be created. DNS delegation is not required for this standalone homelab environment.
 3. Click **Next**.
+
 ---
 ## 5 - Additional Options
 

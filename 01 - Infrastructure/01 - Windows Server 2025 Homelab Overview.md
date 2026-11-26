@@ -71,7 +71,24 @@ Deployment of a virtualized Windows Server 2025 Homelab with a domain controller
 
 [https://chatgpt.com/]()
 
-
+## Technical Documentation Workflow
+```text
+                 Obsidian
+          Technical Documentation
+                    │
+                    ▼
+           Local Git Repository
+            Version Control             
+                    │
+                    │ git push / git pull
+                    ▼
+                  GitHub
+            Remote Repository
+                    │
+                    ▼
+                  ChatGPT
+       Technical Review & Validation
+```
 
 ---
 ### Homelab Infrastructure Layout

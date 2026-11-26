@@ -32,7 +32,7 @@ DHCP range:
 ---
 ## 2 - Verify network configuration
 
-After deploying `DC01` run powershell as administrador:
+After deploying `DC01` run powershell as administrator:
 
 ```
 Get-NetIPConfiguration
