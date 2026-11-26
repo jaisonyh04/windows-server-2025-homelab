@@ -2,19 +2,12 @@
 Create a separate privileged account for administration and keep the **built-in Administrator** account for emergency recovery ("break-glass" account).
 
 ---
-## 1 - Create an Admins OU
+## 1 - Create the user
 
 1. Open *Server Manager* → *Tools* → *Active Directory Users and Computers*.
-2. Right-click on `corp.test` → **New** → **Organizational Unit**.
-3. Enter: `Corp`.
-4. Right-click on `Corp` → **New** → **Organizational Unit**.
-5. Type: `Admins`.
-
----
-## 2 - Create the user
-
-1. Right-click `Admins` OU → **New** → **User**.
-2. Enter:
+2. Navigate to: `corp.test` → `Corp`.
+3. Right-click `Admins` OU → **New** → **User**.
+4. Enter:
 
 | Setting         | Value        |
 | --------------- | ------------ |
@@ -26,17 +19,23 @@ Create a separate privileged account for administration and keep the **built-in 
 5. Click **Next** → **Finish**.
 
 ---
-## 3 - Add the Account to Domain Admins
+## 2 - Add the Account to Domain Admins
 
 1. Right-click `Jaison Hernandez` user → **Properties**.
 2. Click **Member Of** → **Add...**.
 3. Enter `Domain Admins` → **Check Names** → **OK** → **Apply** → **OK**.
 
 ---
-## 4 - Verify Group Membership
+## 3 - Verify Group Membership
 
-1. Open PowerShell and run: `whoami /groups | Select-String "Domain Admins"`.
-2. Example output: 
+1. Open PowerShell and run: 
+
+```
+Get-ADGroupMember "Domain Admins" |
+    Select-Object -ExpandProperty SamAccountName
+```
+
+Example output: 
 
 ```
 Administrator

@@ -58,34 +58,3 @@ To use Remote Server Administration Tools, you need the following prerequisites:
 >- **Core Network Diagnostics – ICMP Echo Request (ICMPv4-In)**: This Allow ICMP traffic for network connectivity testing.
 
 
----
-## 3 - Troubleshooting WinRM Maximum Envelope Size on Both Machines
-
-### Problem
-
-When Server Manager requests the server inventory, `DC01` generates a large WS-Management response (roles, features, services, performance data, etc.). On Windows Server 2025, the default `500 KB` envelope appears to be too small for that response. Increasing the server's `MaxEnvelopeSizeKb` allows it to process and return the larger payload successfully.
-
-1. Sign in to `DC01` and `WIN11-01` as `jaison-admin@corp.test`.
-2. Open PowerShell and run:
-
-   ```powershell
-   Set-Item WSMan:\localhost\MaxEnvelopeSizeKb 8192
-   ```
-
-3. Verify the configuration:
-
-   ```powershell
-   Get-Item WSMan:\localhost\MaxEnvelopeSizeKb
-   ```
-
-4. Confirm the value is:
-
-   ```text
-   8192
-   ```
-
-5. Restart the WinRM service:
-
-```
-   Restart-Service WinRM
-```

@@ -1,6 +1,7 @@
 ### Purpose
 
 Join the client to the `corp.test` domain.
+Dedicated administrative workstation.
 
 ---
 ## 1 - Configure DNS Server
@@ -21,7 +22,7 @@ Preferred DNS server: 10.10.10.10
 Get-NetIPConfiguration
 ```
 
-Expected output:
+Example output:
 
 ```
 InterfaceAlias       : Ethernet
@@ -43,7 +44,7 @@ Run powershell as administrador:
 Resolve-DnsName corp.test
 ```
 
-Expected output:
+Example output:
 
 ```
 Name                                           Type   TTL   Section    IPAddress
@@ -52,24 +53,46 @@ corp.test                                      A      600   Answer     10.10.10.
 ```
 
 ---
-## 3 - Join the Domain
+## 3 - Validate DC discovery
+
+```
+nltest /dsgetdc:corp.test
+```
+
+Example output:
+
+```
+PS C:\Windows\system32> nltest /dsgetdc:corp.test
+           DC: \\DC01.corp.test
+      Address: \\10.10.10.10
+     Dom Guid: 961c26de-08c2-49b6-9309-9fcc274d979e
+     Dom Name: corp.test
+  Forest Name: corp.test
+ Dc Site Name: Default-First-Site-Name
+Our Site Name: Default-First-Site-Name
+        Flags: PDC GC DS LDAP KDC TIMESERV GTIMESERV WRITABLE DNS_DC DNS_DOMAIN DNS_FOREST CLOSE_SITE FULL_SECRET WS DS_8 DS_9 DS_10 KEYLIST 0x40000
+The command completed successfully
+```
+
+---
+## 4 - Join the Domain
 
 1. Open: Settings → System → About → **Domain or workgroup**.
 2. Click **Change...**.
 3. Select: Domain.
 4. Enter: `corp.test`.
 5. Click **OK**.
-6. Username: `jaison-admin@corp.test`, Password: `XXXXXXXXXXX!`.
+6. Username: `jaison-admin@corp.test`, Password: `<ADM_PASSWORD>`.
 7. Expected: Welcome to the corp.test domain.
 8. Restart.
 ---
-## 4 - Log On with a Domain Account
+## 5 - Log On with a Domain Account
 
 1. Select: `Other User`
 2. Sign in using: Username: `jaison-admin@corp.test`, Password: `XXXXXXXXXXX!`.
 
 ---
-## 5 - Verify Domain Membership
+## 6 - Verify Domain Membership
 
 1. Open: Settings → System → About → **Domain or workgroup**.
 2. Run powershell as administrador:
@@ -94,15 +117,6 @@ corp.test             True
 ```
 
 ---
-## 6 - Move WIN11-01 to the correct OU [IMPORTANT]
-
-1. On `DC01`, open *Server Manager* → *Tools* → *Active Directory Users and Computers*.
-2. Navigate to: `corp.test` → `Computers` (This is the default container).
-3. Right-click `WIN11-01` → **Move...**.
-4. Select: `corp` → `Corp` → `Computers` → `Desktops`.
-5. Double-click `WIN11-01` and enter a description.
-
----
 ## 7 - Verify Connectivity with the Domain
 
 1. Open powershell and run: 
@@ -111,7 +125,7 @@ corp.test             True
 ping DC01
 ```
 
-Expected Output:
+Example Output:
 
 ```
 PS C:\WINDOWS\system32> ping DC01
@@ -127,4 +141,28 @@ Ping statistics for 10.10.10.10:
 Approximate round trip times in milli-seconds:
     Minimum = 0ms, Maximum = 1ms, Average = 0ms
 ```
+
+---
+## 8 - Verify the computer's trust relationship with Active Directory
+
+Open powershell and run: 
+
+```
+Test-ComputerSecureChannel -Verbose
+```
+
+Expected result:
+
+```
+True
+```
+
+---
+## 9 - Move WIN11-01 to the correct OU [IMPORTANT]
+
+1. On `DC01`, open *Server Manager* → *Tools* → *Active Directory Users and Computers*.
+2. Navigate to: `corp.test` → `Computers` (This is the default container).
+3. Right-click `WIN11-01` → **Move...**.
+4. Select: `corp` → `Corp` → `Computers` → `Desktops`.
+5. Double-click `WIN11-01` and enter a description.
 

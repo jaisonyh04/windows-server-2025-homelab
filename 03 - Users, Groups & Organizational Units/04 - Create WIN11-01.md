@@ -17,7 +17,7 @@ Deploy the primary Windows 11 client.
 | **Video**    | Virtio                                               |
 | **Display**  | SPICE                                                |
 | **TPM**      | Emulated / 2.0 / CRB                                 |
-| **OS**       | Windows 11 Pro / Windows Server 2025                 |
+| **OS**       | Windows 11 Pro                                       |
 > [!NOTE]
 > During Windows installation, if the virtual disk is not detected, select **Load driver**, browse the VirtIO driver ISO, and load the appropriate storage driver for the configured virtual storage controller.
 > The `viostor` driver is used for VirtIO block storage, while `vioscsi` is used for VirtIO SCSI.

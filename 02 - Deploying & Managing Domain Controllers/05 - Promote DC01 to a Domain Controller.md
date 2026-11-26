@@ -72,7 +72,7 @@ Create the `corp.test` Active Directory domain by promoting `DC01` to a Domain C
 ## 10 - Log On
 
 1. After the restart, log in using: `CORP\Administrator`
-2. Password: `ADM_PASSWORD`
+2. Password: `<ADM_PASSWORD>`
 
 
 
