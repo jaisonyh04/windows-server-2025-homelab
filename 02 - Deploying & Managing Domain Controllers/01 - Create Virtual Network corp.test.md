@@ -96,7 +96,7 @@ Ethernet adapter Ethernet:
 ping 1.1.1.1
 ```
 
-Expected ouput:
+Example output:
 
 ```
 Pinging 1.1.1.1 with 32 bytes of data:

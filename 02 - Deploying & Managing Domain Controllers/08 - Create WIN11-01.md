@@ -18,6 +18,9 @@ Deploy the primary Windows 11 client.
 | **Display**  | SPICE                                                |
 | **TPM**      | Emulated / 2.0 / CRB                                 |
 | **OS**       | Windows 11 Pro / Windows Server 2025                 |
+> [!NOTE]
+> During Windows installation, if the virtual disk is not detected, select **Load driver**, browse the VirtIO driver ISO, and load the appropriate storage driver for the configured virtual storage controller.
+> The `viostor` driver is used for VirtIO block storage, while `vioscsi` is used for VirtIO SCSI.
 
 ---
 ## 1. Rename PC
@@ -25,42 +28,15 @@ Deploy the primary Windows 11 client.
 1. Press **Win `+` I** → Home → **Rename**.
 2. Type: `WIN11-01`.
 3. Restart.
----
-## 2. Run System File Checker (SFC)
-
-1. Run powershell as administrador:
-
-```
-sfc /scannow
-```
-
-> [!NOTE]
-> What it does:
-> Scans all protected Windows system files and automatically repairs corrupted or missing files using the local Windows component store (WinSxS).
-
-2. If fails run:
-
-```
-DISM /Online /Cleanup-Image /RestoreHealth
-```
-
-> [!NOTE]
-> What it does:
-> Checks the Windows component store (WinSxS) for corruption and repairs it by downloading healthy files from Windows Update (or another configured repair source).
-
-Run again: 
-
-```
-sfc /scannow
-```
 
 ---
-## 3. Time zone
+## 2. Time zone
 
 1. Press **Win** `+` **I** → Time & language → Date & time.
 2. Check and set the time zone correctly.
+
 ---
-## 4. Verify network connectivity
+## 3. Verify network connectivity
 
 - Run powershell as administrador:
 
@@ -71,24 +47,26 @@ ping 1.1.1.1
 >Check the IP connection to the Internet.
 
 ```
-Test-NetConnection download.windowsupdate.com -Port 443
+Resolve-DnsName google.com
 ```
 
->Check the HTTPS connection to Windows Update.
+>Test DNS resolution
 
 ---
-## 5. Install VirtIO Guest Tools
+## 4. Install VirtIO Guest Tools
 
 1. Open File Explorer → `This PC`.
 2. Open CD Drive: `virtio-win`.
 3. Run `virtio-win-guest-tools.exe`.
+
 ---
-## 6. Update Windows
+## 5. Update Windows
 
 1. Press **Win** `+` **I** → Windows Updates.
 2. `Check for updates`.
+
 ---
-## 7. Verify Device Manager
+## 6. Verify Device Manager
 
 - Make sure there are no important devices marked with ⚠️ or `Unknown device`.
 

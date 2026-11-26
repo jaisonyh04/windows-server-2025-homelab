@@ -17,7 +17,7 @@ Assign a permanent IP address to `DC01`.
 IP address: 10.10.10.10
 Subnet mask: 255.255.255.0
 DefaultGateway: 10.10.10.1
-Preferred DNS server: 10.10.10.1   ← temporal
+Preferred DNS server: 10.10.10.10
 ```
 
 5. Click **OK** → **Close**.
@@ -32,7 +32,7 @@ Run powershell as administrador:
 Get-NetIPConfiguration
 ```
 
-Expected output:
+Example output:
 
 ```
 InterfaceAlias       : Ethernet
@@ -42,29 +42,9 @@ NetProfile.Name      : Network
 IPv4Address          : 10.10.10.10
 IPv6DefaultGateway   :
 IPv4DefaultGateway   : 10.10.10.1
-DNSServer            : 10.10.10.1
+DNSServer            : 10.10.10.10
 ```
 
----
-## 3 - Verify Network Connectivity
 
-
-```
-Test-NetConnection 10.10.10.1
-```
-
->Test connectivity.
-
-
-```
-Test-NetConnection 1.1.1.1
-```
-
->Tests outbound network connectivity from your machine to Cloudflare's public DNS server (`1.1.1.1`).
-
-
-```
-Resolve-DnsName microsoft.com
-```
-
->Confirms that the server can successfully query a DNS server and translate domain names into IP addresses.
+> [!IMPORTANT]
+> In an Active Directory domain, **all computers in the domain, including the domain controller, must use Active Directory DNS**. Internet access is achieved through **forwarders** configured in the DNS service, not by configuring public DNS servers on the network interfaces.

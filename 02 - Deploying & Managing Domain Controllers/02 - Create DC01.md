@@ -35,12 +35,6 @@ Deploy the primary Domain Controller.
 1. Press **Win** `+` **I** → Time & language → Date & time.
 2. Check and set the time zone correctly.
 
-> [!IMPORTANT]
-> It is essential to verify and correctly configure the time zone in Windows Server.
-> The Kerberos authentication protocol (the standard in Windows domains) requires that the clocks on clients and domain controllers be synchronized.
-> With an incorrect time zone, correlating events across different servers or computers becomes confusing or impossible, making troubleshooting difficult.
-> If the server is set to the wrong time zone, critical backups or automatic maintenance tasks will run at inconvenient times.
-
 ---
 ## 3. Verify network connectivity
 
@@ -66,25 +60,6 @@ Ping statistics for 1.1.1.1:
 Approximate round trip times in milli-seconds:
     Minimum = 2ms, Maximum = 2ms, Average = 2ms
 ```
-
-
-```
-Test-NetConnection download.windowsupdate.com -Port 443
-```
-
->Check the HTTPS connection to Windows Update.
-
-Example output:
-
-```
-ComputerName     : download.windowsupdate.com
-RemoteAddress    : 151.101.54.172
-RemotePort       : 443
-InterfaceAlias   : Ethernet
-SourceAddress    : 10.10.10.150
-TcpTestSucceeded : True
-```
-
 
 ---
 ## 4. Install VirtIO Guest Tools

@@ -1,6 +1,6 @@
 ### Objective
 
-Deploy Active Directory for centralized identity management.
+Install the *Active Directory Domain Services (AD DS)* and *DNS Server* roles to prepare `DC01` for promotion to a Domain Controller.
 
 ---
 

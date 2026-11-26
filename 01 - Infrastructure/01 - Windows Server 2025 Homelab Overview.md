@@ -39,12 +39,17 @@ Deployment of a virtualized Windows Server 2025 Homelab with a domain controller
 - DNS.
 - Active Directory Domain Services.
 - SMB File Server.
+- IP address: `10.10.10.10`.
+- Subnet mask: `255.255.255.0`.
+- DefaultGateway: `10.10.10.1`.
+- Preferred DNS server: `10.10.10.10`.
 <img width="1279" height="864" alt="image" src="https://github.com/user-attachments/assets/76677e2e-def9-4fdb-aaae-067174473c8e" />
 
 ### WIN11-01
 
 - Windows 11 Pro.
 - Domain Client / IT Administrator Workstation.
+- Preferred DNS server: `10.10.10.10`.
 <img width="1279" height="865" alt="image" src="https://github.com/user-attachments/assets/d01aa991-9a92-48f2-9f9b-7ac9a4082072" />
 
 ---

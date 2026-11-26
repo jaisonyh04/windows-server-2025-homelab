@@ -23,7 +23,7 @@ Create a separate privileged account for administration and keep the **built-in 
 | User Logon Name | jaison-admin |
 3. Click **Next**.
 4. Assign a strong password.
-5. For simplicity, disable *user must change password at next logon*, enable *Password never expires* option and click **Next** → **Finish**.
+5. Click **Next** → **Finish**.
 
 ---
 ## 3 - Add the Account to Domain Admins
@@ -35,8 +35,8 @@ Create a separate privileged account for administration and keep the **built-in 
 ---
 ## 4 - Verify Group Membership
 
-1. Open PowerShell and run: `Get-ADGroupMember "Domain Admins"`.
-2. Expected output: 
+1. Open PowerShell and run: `whoami /groups | Select-String "Domain Admins"`.
+2. Example output: 
 
 ```
 Administrator

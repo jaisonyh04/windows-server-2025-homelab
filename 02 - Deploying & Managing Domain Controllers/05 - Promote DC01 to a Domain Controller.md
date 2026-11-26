@@ -23,7 +23,7 @@ Create the `corp.test` Active Directory domain by promoting `DC01` to a Domain C
 3. Domain Name System (DNS): Enabled
 4. Global Catalog (GC): Enabled
 5. Read Only Domain Controller (RODC): Disabled
-6. Directory Services Restore Mode (DSRM): `XXXXXXXXXXX!`
+6. Directory Services Restore Mode (DSRM): `<DSRM_PASSWORD>`
 7. Click **Next**.
 
 > This password is only used for Active Directory recovery.
@@ -72,44 +72,9 @@ Create the `corp.test` Active Directory domain by promoting `DC01` to a Domain C
 ## 10 - Log On
 
 1. After the restart, log in using: `CORP\Administrator`
-2. Password: `XXXXXXXXXXX!`
-
----
-## 11- Configure DNS Server
-
-1. Open: *Settings* → *Network & internet* → *Advanced network settings*.
-2. Click **Ethernet** → **More adapter options** → **Edit**.
-3. Select **Internet Protocol Version 4 (TCP/IPv4)** → **Properties**.
-4. Select **Use the following DNS server addresses** and enter:
-
-```
-Preferred DNS server: 10.10.10.10
-```
-
-5. Click **OK** → **Close**.
-6. Run powershell as administrador:
-
-```
-Get-NetIPConfiguration
-```
-
-Expected output:
-
-```
-InterfaceAlias       : Ethernet
-InterfaceIndex       : 9
-InterfaceDescription : Intel(R) 82574L Gigabit Network Connection
-NetProfile.Name      : corp.test
-IPv4Address          : 10.10.10.10
-IPv6DefaultGateway   :
-IPv4DefaultGateway   : 10.10.10.1
-DNSServer            : ::1
-                       10.10.10.10
-```
+2. Password: `ADM_PASSWORD`
 
 
 
-> [!IMPORTANT]
-> In an Active Directory domain, **all computers in the domain, including the domain controller, must use Active Directory DNS**. Internet access is achieved through **forwarders** configured in the DNS service, not by configuring public DNS servers on the network interfaces.
 
 
