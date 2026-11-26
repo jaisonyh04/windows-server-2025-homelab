@@ -2,9 +2,9 @@
 
 Verify that `DC01` was successfully promoted to a Domain Controller and that essential Active Directory services are operational.
 
----
-Run the following commands in an elevated PowerShell session on `DC01`:
+Run the following commands in an elevated PowerShell session on `DC01`.
 
+---
 ## 1 - Report domain controller diagnostic errors
 
 ```
