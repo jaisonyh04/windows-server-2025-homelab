@@ -49,6 +49,7 @@ The lab documents domain deployment, user and group administration, workstation 
 - Domain Client / IT Administrator Workstation.
 - Preferred DNS server: `10.10.10.10`.
 <img width="1279" height="865" alt="image" src="https://github.com/user-attachments/assets/d01aa991-9a92-48f2-9f9b-7ac9a4082072" />
+
 ---
 
 ## 2. Windows Administration and Technologies Practiced

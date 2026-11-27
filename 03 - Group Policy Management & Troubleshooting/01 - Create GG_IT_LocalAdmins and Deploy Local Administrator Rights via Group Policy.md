@@ -1,6 +1,6 @@
 ## Purpose
 
-Grant local administrator rights through Group Policy.
+Centrally manage local administrator rights on domain-joined workstations using an Active Directory security group and Group Policy Preferences, without granting Domain Admin privileges.
 
 ---
 ## 1 - Create GG_LocalAdmins
@@ -11,13 +11,13 @@ Grant local administrator rights through Group Policy.
 4. Select **New** → **Group**.
 5. Type: `GG_IT_LocalAdmins`.
 6. Set Group scope to `Global` and Group type to `Security` → **OK**.
-7. Add `jsmith`  (`GG_IT_SysAdmins`) to `GG_IT_LocalAdmins`.
+7. Add `jsmith` to the `GG_IT_LocalAdmins` security group.
 
 ---
 ## 2 - Create the Group Policy
 
 1. Open *Server Manager* → *Tools* → *Group Policy Management*.
-2. Navigate to: `Forest: corp.tes`t → `Domains` → `corp.test` → `Corp`.
+2. Navigate to: `Forest: corp.test` → `Domains` → `corp.test` → `Corp`.
 3. Right-click `Computers` → **Create a GPO in this domain, and Link it here...**.
 4. Type `Local Admins` and click **OK**.****
 5. Right-click `Local Admins` → **Edit**.
@@ -41,19 +41,22 @@ Members: CORP\GG_IT_LocalAdmins
 2. Run Command Prompt and type:
 
 ```
+gpupdate /force
 whoami /groups
 ```
 
 Expected output:
 
 ```
+Computer Policy update has completed successfully.
+User Policy update has completed successfully.
 BUILTIN\Administrators
 ```
 
 3. Click **Win** and type: `cmd`
 4. `Command Prompt` → `Run as administrator`.
 
-Instead of asking for administrator credentials, Windows should display the standard UAC confirmation dialog:
+Instead of asking for administrator credentials, Windows should display the standard *UAC* confirmation dialog:
 
 ```
 Do you want to allow this app to make changes to your device?

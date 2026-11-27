@@ -20,8 +20,6 @@ C:\File-sharing
 ---
 ### 2 - Set Up the Share (SMB)
 
->**Share permissions** Control who can access the shared folder over the network.
-
 1. Right-click the `SysAdmins` folder and select **Properties**.
 2. Go to the **Sharing** tab and click the **Advanced Sharing...** button.
 3. Check the **Share this folder** box.
@@ -34,8 +32,6 @@ C:\File-sharing
 
 ---
 ### 3 - Configure NTFS Security Permissions
-
->**NTFS permissions** Control what users can do with files and folders (read, modify, delete, etc.).
 
 1. In the same folder **Properties** window, go to the **Security** tab.
 2. Click **Edit...**, then **Add...**.

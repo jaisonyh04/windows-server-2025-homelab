@@ -4,16 +4,17 @@ Map network drives for users when they log in.
 
 ---
 
-1. Open Server Manager → Tools → Group Policy Management.
-2. Navigate to: `Forest: corp.tes`t → `Domains` → `corp.test` → `Corp` → `Users`.
+1. Open *Server Manager* → *Tools* → *Group Policy Management*.
+2. Navigate to: `Forest: corp.test` → `Domains` → `corp.test` → `Corp` → `Users`.
 3. Right-click `HR` OU → **Create a GPO in this domain, and Link it here....**
 4. Type `DriveMapping-HR` and click **OK**.
 5. Right-click `DriveMapping-HR` → **Edit**.
-6. Navigate to User Configuration → Preferences → Window Settings.
-7. Right-click Drive Maps → **New** → **Mapped Drive**.
+6. Navigate to *User Configuration* → *Preferences* → *Windows Settings* → *Drive Maps*. 
+7. Right-click *Drive Maps* → **New** → **Mapped Drive**.
 8. Configure:
 
 ```
+Action: Update
 Location: \\DC01\HR
 Drive Letter: P
 Show this drive
@@ -40,13 +41,13 @@ Show this drive
 ---
 ## Verification
 
-1. Log in using a domain account.
+1. On `WIN11-01`, sign in as `CORP\mjohnson`.
 2. Open File Explorer and Verify that the mapped drive appears under **This PC**.
-3. Open PowerShell and run:
+3. Open the mapped drive and verify that the user can access the shared folder.
+4. Open PowerShell and run:
 
 ```
 gpresult /scope user /r
-gpresult /scope computer /r
 ```
 
 Expected output:
@@ -54,7 +55,7 @@ Expected output:
 ```
  Applied Group Policy Objects
     -----------------------------
-        DriveMapping-SysAdmins
+        DriveMapping-HR
 ```
 
 <img width="1275" height="763" alt="image" src="https://github.com/user-attachments/assets/8c8bbfca-c696-471b-9ce1-e96f7c5f52c2" />
