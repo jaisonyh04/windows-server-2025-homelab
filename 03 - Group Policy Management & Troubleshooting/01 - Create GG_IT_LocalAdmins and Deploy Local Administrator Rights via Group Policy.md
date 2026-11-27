@@ -25,11 +25,11 @@ Centrally manage local administrator rights on domain-joined workstations using 
 7. Right-click *Local Users and Groups* → **New** → **Local Group**.
 8. Configure:
 
-```
-Action: Update
-Group Name: Administrators (built-in)
-Members: CORP\GG_IT_LocalAdmins
-```
+| Setting    | Value                       |
+| ---------- | --------------------------- |
+| Action     | `Update`                    |
+| Group Name | `Administrators (built-in)` |
+| Members    | `CORP\GG_IT_LocalAdmins`    |
 
 9. Click **OK** → **OK**.
 10. Close the Group Policy Management Editor.

@@ -39,11 +39,11 @@ Apply a default desktop wallpaper to domain users.
 7. Open *Desktop Wallpaper*.
 8. Configure:
 
-```
-State: Enabled
-Wallpaper Name: \\DC01\Wallpapers\wallpaper.png
-Wallpaper Style: Fill or Fit
-```
+| Setting         | Value                             |
+| --------------- | --------------------------------- |
+| State           | `Enabled`                         |
+| Wallpaper Name  | `\\DC01\Wallpapers\wallpaper.png` |
+| Wallpaper Style | `Fill or Fit`                     |
 
 9. Click **Apply** → **OK**.
 

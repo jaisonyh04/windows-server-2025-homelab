@@ -1,30 +1,13 @@
 ## Purpose
-Assign and restrict user rights to enhance security.
+Restrict local and Remote Desktop logon rights according to security group membership and administrative responsibilities.
 
 ---
-## 1 - Define the User Rights Assignment Strategy
+## 1 - Configure User Rights Assignment for Domain Controllers
 
-|Account / Group|DC01 Local Logon|WIN11-01 Local Logon|
-|---|---|---|
-|`jaison-admin`|Allowed|Allowed|
-|`GG_IT_SysAdmins`|Not allowed|Allowed|
-|`GG_IT_HelpDesk`|Not allowed|Allowed|
-|`GG_HR`|Not allowed|Not allowed|
-|`GG_Finance`|Not allowed|Not allowed|
-|`GG_Operations`|Not allowed|Not allowed|
-
-Remote Desktop logon is restricted to members of the respective Administrators group.
-
-> [!NOTE]  
-> `WIN11-01` is a dedicated IT Administrator Workstation. Testing policies with non-IT user accounts requires temporarily adjusting the workstation logon restrictions.
-
----
-## 2 - Configure User Rights Assignment for Domain Controllers
-
-1. Open *Group Policy Management* (`gpmc.msc`).
-2. Navigate to: `Forest: corp.test` → `Domains` → `corp.test`.
+1. Open *Server Manager* → *Tools* → *Group Policy Management*.
+2. Navigate to `Forest: corp.test` → `Domains` → `corp.test`.
 3. Right-click `Domain Controllers` → **Create a GPO in this domain, and Link it here...**.
-4. Type `DC - User Rights Assignment` and click **OK**.
+4. Name the GPO `DC - User Rights Assignment`.
 5. Right-click the GPO → **Edit**.
 6. Navigate to:
 
@@ -41,64 +24,77 @@ Computer Configuration
 
 |Policy|User or Group|
 |---|---|
-|Allow log on locally|`BUILTIN\Administrators`|
-|Allow log on through Remote Desktop Services|`BUILTIN\Administrators`|
-|Deny log on locally|`BUILTIN\Guests`|
-|Deny log on through Remote Desktop Services|`BUILTIN\Guests`|
+|Allow log on locally|`CORP\Domain Admins`|
+|Allow log on through Remote Desktop Services|`CORP\Domain Admins`|
 
-> [!IMPORTANT]  
-> Do not restrict **Access this computer from the network** to administrators. DC01 provides Active Directory, DNS and SMB file-sharing services.
+> [!NOTE]  
+> Only members of Domain Admins are granted local and Remote Desktop logon rights on `DC01` by these settings.
 
 ---
-## 3 - Configure User Rights Assignment for Workstations
+## 2 - Configure User Rights Assignment for Workstations
 
-1. Open *Group Policy Management*.
-2. Navigate to: `corp.test` → `Corp` → `Computers`.
+1. Open *Server Manager* → *Tools* → *Group Policy Management*.
+2. Navigate to `corp.test` → `Corp` → `Computers`.
 3. Right-click `Desktops` → **Create a GPO in this domain, and Link it here...**.
-4. Type `Workstations - User Rights Assignment` and click **OK**.
+4. Name the GPO `Workstations - User Rights Assignment`.
 5. Right-click the GPO → **Edit**.
-6. Navigate to **User Rights Assignment**.
-7. Configure the following policies:
+6. Navigate to:
+
+```
+Computer Configuration
+└── Policies
+    └── Windows Settings
+        └── Security Settings
+            └── Local Policies
+                └── User Rights Assignment
+```
+
+7. Configure the following policy:
 
 |Policy|User or Group|
 |---|---|
-|Allow log on locally|`BUILTIN\Administrators`, `CORP\GG_IT_SysAdmins`, `CORP\GG_IT_HelpDesk`|
-|Allow log on through Remote Desktop Services|`BUILTIN\Administrators`|
-|Deny log on locally|`BUILTIN\Guests`|
-|Deny log on through Remote Desktop Services|`BUILTIN\Guests`|
+|Deny log on through Remote Desktop Services|`BUILTIN\Guests`, `CORP\GG_HR`, `CORP\GG_Finance`, `CORP\GG_Operations`|
 
 > [!NOTE]  
-> Configuring a user right replaces its previous assignment list. Explicit deny rights take precedence over corresponding allow rights.
-
----
-## 4 - Verification
+> Leave Allow log on locally unconfigured in this GPO to preserve existing workstation logon rights. 
+> Departmental users can continue signing in locally to `WIN11-01` for testing purposes.
 
 > [!IMPORTANT]  
-> Before applying the GPOs, verify that your administrative account has the required logon rights and maintain an active administrative session.
+> Deny rights take precedence over corresponding allow rights. When defining a user right, review its existing assignments before replacing them.
 
-1. On both `DC01` and `WIN11-01`, open PowerShell as administrator and run:
+---
+## 3 - Verification
+
+1. Ensure that Remote Desktop is enabled on the target computer before testing RDP logon.
+2. Verify administrative access before testing restrictions.
+3. On `DC01` and `WIN11-01`, open PowerShell as administrator and run:
 
 ```
 gpupdate /force
 gpresult /scope computer /r
 ```
 
-2. Verify that the corresponding GPO has been applied:
+4. Verify that the corresponding GPO has been applied.
 
-|Computer|Applied Group Policy Object|
+|Computer|Applied GPO|
 |---|---|
-|`DC01`|`DC - User Rights Assignment`|
-|`WIN11-01`|`Workstations - User Rights Assignment`|
+|DC01|DC - User Rights Assignment|
+|WIN11-01|Workstations - User Rights Assignment|
 
-3. Test local logon using the following domain accounts:
+5. Test local and Remote Desktop logon using the following domain accounts:
 
-|Account|DC01|WIN11-01|
-|---|---|---|
-|`CORP\jaison-admin`|Allowed|Allowed|
-|`CORP\jsmith`|Not allowed|Allowed|
-|`CORP\dwilson`|Not allowed|Allowed|
-|`CORP\mjohnson`|Not allowed|Not allowed|
-4. If Remote Desktop is enabled, verify that only members of the respective Administrators group can establish RDP sessions.
+|Account|DC01 Local|DC01 RDP|WIN11-01 Local|WIN11-01 RDP|
+|---|---|---|---|---|
+|`CORP\jaison-admin`|Allowed|Allowed|Allowed|Allowed*|
+|`CORP\jsmith`|Denied|Denied|Allowed|Existing rights*|
+|`CORP\dwilson`|Denied|Denied|Allowed|Existing rights*|
+|`CORP\mjohnson`|Denied|Denied|Allowed|Denied|
+|`CORP\janderson`|Denied|Denied|Allowed|Denied|
+|`CORP\dmiller`|Denied|Denied|Allowed|Denied|
+
+> [!important]
+> Workstation RDP access depends on existing Remote Desktop permissions and group membership.
 
 > [!NOTE]  
-> User rights assignment changes take effect during subsequent logons. A computer restart is generally not required.
+> User rights assignment changes take effect during subsequent logons. 
+> A computer restart is not required for these user rights changes.

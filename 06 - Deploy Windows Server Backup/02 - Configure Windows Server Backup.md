@@ -24,7 +24,7 @@ Install and configure Windows Server Backup on `DC01` to create scheduled backup
 9. Confirmation: Click **Finish**.
 
 > [!NOTE]
-> When you configure Windows Server Backup, if you choose "Back up to a hard disk that is dedicated for backups", Windows will reserve that disk exclusively for backups and may remove its drive letter automatically. This is expected behavior.
+> When you configure Windows Server Backup, if you choose *Back up to a hard disk that is dedicated for backups*, Windows will reserve that disk exclusively for backups and may remove its drive letter automatically. This is expected behavior.
 
 <img width="975" height="509" alt="image" src="https://github.com/user-attachments/assets/c38dc807-f5cc-49aa-b835-c298afd0299f" />
 

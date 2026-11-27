@@ -7,7 +7,6 @@ Configure and Enforce a consistent password policy for all domain accounts.
 > If you set them on an OU, they only affect local accounts of computers in that OU.
 
 ---
-
 ## 1 - Open the Default Domain Policy
 
 1. Open *Server Manager* → *Tools* → *Group Policy Management*.
@@ -17,7 +16,6 @@ Configure and Enforce a consistent password policy for all domain accounts.
 5. Navigate to: Computer Configuration → Policies → Windows Settings → Security Settings → Account Policies → **Password Policy**.
 
 ---
-
 ## 2 - Configure the GPO
 
 | Setting                                     | Value         | Why                                                               |
@@ -51,11 +49,11 @@ Get-ADDefaultDomainPasswordPolicy
 1. Navigate to: *Account Policies* → *Account Lockout Policy*.
 2. Configure:
 
-```
-Account lockout threshold: 5 invalid logon attempts
-Account lockout duration: 15 minutes
-Reset account lockout counter after: 15 minutes
-```
+| Setting                             | Value                    |
+| ----------------------------------- | ------------------------ |
+| Account lockout threshold           | 5 invalid logon attempts |
+| Account lockout duration            | 15 minutes               |
+| Reset account lockout counter after | 15 minutes               |
 
 ### Verification
 

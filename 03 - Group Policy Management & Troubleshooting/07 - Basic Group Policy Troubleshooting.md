@@ -52,7 +52,7 @@ Event Viewer
                 └── Operational
 ```
 
-Review recent Group Policy processing warnings and errors.
+>Review recent Group Policy processing warnings and errors.
 
 ---
 ## 4 - Refresh Group Policy
@@ -63,7 +63,7 @@ After correcting any configuration issues, run:
 gpupdate /force
 ```
 
-Restart the computer or sign out and sign back in if required by the configured policy.
+>Restart the computer or sign out and sign back in if required by the configured policy.
 
 ---
 ## 5 - Verify the resolution

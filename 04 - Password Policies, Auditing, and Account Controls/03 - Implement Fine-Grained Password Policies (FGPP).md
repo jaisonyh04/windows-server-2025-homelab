@@ -1,5 +1,5 @@
 ## Purpose
-Implement a stricter password policy for privileged administrative accounts without modifying the existing domain-wide password policy.
+Implement a stricter password policy for privileged administrative accounts without modifying the existing *Default Domain Policy*.
 
 ---
 ## 1 - Define the Password Policy Strategy
@@ -41,7 +41,7 @@ Implement a stricter password policy for privileged administrative accounts with
 ---
 ## 3 - Create the Fine-Grained Password Policy
 
-1. Open **Active Directory Administrative Center** (`dsac.exe`).
+1. Open *Active Directory Administrative Center* (`dsac.exe`).
 2. Navigate to: `corp (local)` → `System` → `Password Settings Container`.
 3. In the Tasks panel, select **New** → **Password Settings**.
 4. Configure:
@@ -60,7 +60,7 @@ Implement a stricter password policy for privileged administrative accounts with
 |Reset failed logon attempts count|15 minutes|
 |Account lockout duration|15 minutes|
 |Protect from accidental deletion|Enabled|
-5. Under **Directly Applies To**, click **Add**.
+5. Under *Directly Applies To*, click **Add**.
 6. Enter `GG_Privileged_Accounts` → **Check Names** → **OK** → **OK**.
 
 > [!NOTE]

@@ -21,20 +21,18 @@ Add and configure a dedicated virtual disk for backup storage on `DC01`.
 ---
 ## 2 - Configure the Virtual Disk in Windows Server
 
-1. Open Server Manager → File and Storage Services → Volumes → Disks.
-2. Right-click `Red Hat VirtIO` → **Bring Online**.
-3. Right-click `Red Hat VirtIO` → **Initialize**.
-4. Right-click `Red Hat VirtIO` → **New Volume...**.
-5. This will start the *New Volume Wizard*.
-6. Before you begin: Click **Next**
-7. Server and Disk: Click **Next**
-8. Size: Click **Next**
-9. Drive Letter: `F` → **Next**
-10. File Systems Settings:
+1. Open *Server Manager* → *File and Storage Services* → *Volumes* → *Disks*.
+2. Right-click `Red Hat VirtIO` → **Bring Online** → **Initialize** → **New Volume...**.
+3. This will start the *New Volume Wizard*.
+4. Before you begin: Click **Next**
+5. Server and Disk: Click **Next**
+6. Size: Click **Next**
+7. Drive Letter: `F` → **Next**
+8. File Systems Settings:
  - File System: `NTFS`
  - Allocation Unit Size: `Default`
  - Volume Label: `Backup`
  - **Next**
-11. Confirmation: **Create** → **Close**.
-12. Verify that the new **Backup (F:)** volume appears under **Volumes** and in **File Explorer**.
+9. Confirmation: **Create** → **Close**.
+10. Verify that the new **Backup (F:)** volume appears under **Volumes** and in **File Explorer**.
 

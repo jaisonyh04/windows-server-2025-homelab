@@ -13,12 +13,12 @@ Map network drives for users when they log in.
 7. Right-click *Drive Maps* → **New** → **Mapped Drive**.
 8. Configure:
 
-```
-Action: Update
-Location: \\DC01\HR
-Drive Letter: P
-Show this drive
-```
+| Setting              | Value             |
+| -------------------- | ----------------- |
+| Action               | `Update`          |
+| Location             | `\\DC01\HR`       |
+| Drive Letter         | `P`               |
+| Hide/Show this drive | `Show this drive` |
 
 9. Click **Apply**.
 10. Select `Common` tab →` Item-level targeting` → `Targeting...`.
