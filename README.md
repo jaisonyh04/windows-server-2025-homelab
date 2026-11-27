@@ -1,4 +1,5 @@
 <img width="1276" height="862" alt="image" src="https://github.com/user-attachments/assets/63f0d43a-1bd8-4925-8058-036fee13335a" />
+
 ## 1. Windows Server 2025 Homelab
 
 Deployment of a virtualized Windows Server 2025 Homelab with a domain controller and a client on Arch Linux to practice Windows administration and IT support. 
@@ -23,6 +24,7 @@ The lab documents domain deployment, user and group administration, workstation 
 - DHCP range: `10.10.10.100 – 10.10.10.200`.
 - Gateway: `10.10.10.1`.
 <img width="799" height="628" alt="image" src="https://github.com/user-attachments/assets/f1df4edc-e473-46b5-8a39-06143ac245da" />
+
 ### 2.4 Domain
 - Forest: `corp.test`.
 - Domain: `corp.test`.
@@ -41,12 +43,14 @@ The lab documents domain deployment, user and group administration, workstation 
 - DefaultGateway: `10.10.10.1`.
 - Preferred DNS server: `10.10.10.10`.
 <img width="1279" height="864" alt="image" src="https://github.com/user-attachments/assets/76677e2e-def9-4fdb-aaae-067174473c8e" />
+
 #### WIN11-01
 - Windows 11 Pro.
 - Domain Client / IT Administrator Workstation.
 - Preferred DNS server: `10.10.10.10`.
 <img width="1279" height="865" alt="image" src="https://github.com/user-attachments/assets/d01aa991-9a92-48f2-9f9b-7ac9a4082072" />
 ---
+
 ## 3. Windows Administration and Technologies Practiced
 
 - **Active Directory Domain Services and DNS**: Deployed the `corp.test` forest, joined `WIN11-01` to the domain, and documented domain controller checks for DNS, SYSVOL, NETLOGON, and FSMO roles.
