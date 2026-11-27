@@ -58,6 +58,7 @@ Expected output:
         DriveMapping-HR
 ```
 
-<img width="1275" height="763" alt="image" src="https://github.com/user-attachments/assets/8c8bbfca-c696-471b-9ce1-e96f7c5f52c2" />
+<img width="1276" height="764" alt="image" src="https://github.com/user-attachments/assets/80d31444-f61a-473f-8df6-16f798345aa2" />
+
 
 
