@@ -3,8 +3,10 @@
 Prevent users from using USB storage devices.
 
 ---
+## 1 - Configure the GPO
+
 1. Open Server Manager → Tools → Group Policy Management.
-2. Navigate to: `Forest: corp.tes`t → `Domains` → `corp.test` → `Corp` → `Computers`.
+2. Navigate to: `Forest: corp.test` → `Domains` → `corp.test` → `Corp` → `Computers`.
 3. Right-click `Desktops` OU → **Create a GPO in this domain, and Link it here...**.
 4. Type `Disable USB Storage` and click **OK**.
 5. Right-click `Disable USB Storage` → **Edit**.
@@ -14,7 +16,7 @@ Prevent users from using USB storage devices.
 9. Click **Apply** → **OK**.
 
 ---
-## Verification
+## 2 - Verification
 
 1. Log in using a domain account.
 2. Connect a USB storage device.
@@ -23,7 +25,6 @@ Prevent users from using USB storage devices.
 5. Open PowerShell and run:
 
 ```
-gpresult /scope user /r
 gpresult /scope computer /r
 ```
 
@@ -34,3 +35,20 @@ Expected output:
     -----------------------------
         Disable USB Storage
 ```
+
+---
+## 3 - Understanding the policy
+
+| Device                | Effect of this GPO           |
+| --------------------- | ---------------------------- |
+| USB flash drive       | ==🔴Storage access blocked== |
+| CD/DVD                | ==🔴Storage access blocked== |
+| Removable memory card | ==🔴Storage access blocked== |
+| USB keyboard          | ==🟢Unaffected==                   |
+| USB mouse             | ==🟢Unaffected==                   |
+| USB printer           | ==🟢Printing unaffected==          |
+
+
+> [!NOTE]
+> The policy restricts **storage access**, not USB connectivity itself. 
+> It does not disable USB ports or prevent device detection.

@@ -2,7 +2,7 @@
 Implement a stricter password policy for privileged administrative accounts without modifying the existing domain-wide password policy.
 
 ---
-## **1 - Define the Password Policy Strategy**
+## 1 - Define the Password Policy Strategy
 
 |Setting|Existing Domain Policy|Privileged Accounts (PSO)|
 |---|---|---|
@@ -17,7 +17,7 @@ Implement a stricter password policy for privileged administrative accounts with
 |Reset lockout counter|15 minutes|15 minutes|
 
 ---
-## **2 - Create a Global Security Group**
+## 2 - Create a Global Security Group
 
 1. On `WIN11-01`, sign in as `jaison-admin@corp.test`.
 2. Open **Active Directory Users and Computers**.
@@ -39,7 +39,7 @@ Implement a stricter password policy for privileged administrative accounts with
 
 
 ---
-## **3 - Create the Fine-Grained Password Policy**
+## 3 - Create the Fine-Grained Password Policy
 
 1. Open **Active Directory Administrative Center** (`dsac.exe`).
 2. Navigate to: `corp (local)` → `System` → `Password Settings Container`.
@@ -67,7 +67,7 @@ Implement a stricter password policy for privileged administrative accounts with
 > Fine-Grained Password Policies (FGPPs) are stored as Password Settings Objects (PSOs) and can be assigned to users or Global Security Groups, but not directly to OUs.
 
 ---
-## **4 - Verify the Password Policy**
+## 4 - Verify the Password Policy
 
 1. On `WIN11-01`, open PowerShell and run:
 
@@ -106,7 +106,7 @@ Get-ADUserResultantPasswordPolicy -Identity jsmith
 No output is expected because `jsmith` follows the default domain password policy.
 
 ---
-## **5 - Test Password Policy Enforcement**
+## 5 - Test Password Policy Enforcement
 
 - [ ] Create a temporary standard user account named `fgpp-test`.
 - [ ] Add the account to `GG_Privileged_Accounts`.

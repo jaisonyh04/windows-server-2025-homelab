@@ -9,6 +9,10 @@ Apply a default desktop wallpaper to domain users.
 2. Copy an image into it.
 <img width="1275" height="763" alt="image" src="https://github.com/user-attachments/assets/08559f11-9987-482e-bd5a-5ef64381c2e9" />
 
+
+> [!NOTE]
+> Microsoft's Desktop Wallpaper policy specifies JPEG (.jpg) and bitmap (.bmp) image formats. PNG may work in practice, but it is not explicitly documented for this policy.
+
 ---
 ## 2 - Share the folder
 
@@ -19,13 +23,15 @@ Apply a default desktop wallpaper to domain users.
 5. Remove `Everyone` group. 
 6. Add: `Authenticated Users`.
 7. Set the Share Permissions to `Read`.
-8. Set the NTFS Permission to `Read & Execute`.
+8. Navigate to the **Security** tab → **Edit...**.
+9. Add `Authenticated Users`.
+10. Grant `Read & Execute` permissions.
 
 ---
 ## 3 - Create the Desktop Wallpaper GPO
 
 1. Open Server Manager → Tools → Group Policy Management.
-2. Navigate to: `Forest: corp.tes`t → `Domains` → `corp.test` → `Corp`.
+2. Navigate to: `Forest: corp.test` → `Domains` → `corp.test` → `Corp`.
 3. Right-click `Users` OU → **Create a GPO in this domain, and Link it here...**.
 4. Type `Desktop Wallpaper` and click **OK**.
 5. Right-click `Desktop Wallpaper` → **Edit**.
@@ -58,7 +64,6 @@ Wallpaper Style: Fill or Fit
 
 ```
 gpresult /scope user /r
-gpresult /scope computer /r
 ```
 
 Expected output:
@@ -83,5 +88,5 @@ Unlike local file paths that rely on drive letters (e.g., `C:\Documents\file.txt
 A UNC path always follows this syntax: `\\ServerName\ShareName\DirectoryPath\Filename.ext`
 
 - **`\\ServerName`**: The computer, server, NAS device, or IP address hosting the resource (preceded by two backslashes).
-- **`\ShareName`**: The specific folder or resource that has been shared publicly on that network device.
+- **`\ShareName`**: The name of the shared resource hosted on the specified network device. Access is controlled by the configured share and filesystem permissions.
 - **`\DirectoryPath\Filename`**: The standard subfolder path and file name leading to the final target.

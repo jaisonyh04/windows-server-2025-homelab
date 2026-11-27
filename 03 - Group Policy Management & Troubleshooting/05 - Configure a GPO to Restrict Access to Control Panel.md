@@ -1,11 +1,11 @@
 ### Objective
 
-Prevent users from accessing the Control Panel.
+Restrict access to Control Panel and Windows Settings for users in the HR, Finance, and Operations departments, preventing unauthorized changes through these interfaces.
 
 ---
 
 1. Open Server Manager → Tools → Group Policy Management.
-2. Navigate to: `Forest: corp.tes`t → `Domains` → `corp.test`.
+2. Navigate to: `Forest: corp.test` → `Domains` → `corp.test`.
 3. Right-click `Group Policy Objects` → **New**.
 4. Type `Restrict Control Panel` and click **OK**.
 5. Right-click `Restrict Control Panel` → **Edit**.
@@ -40,7 +40,6 @@ User Configuration
 
 ```
 gpresult /scope user /r
-gpresult /scope computer /r
 ```
 
 Expected output:
@@ -50,3 +49,7 @@ Expected output:
     -----------------------------
         Restrict Control Panel
 ```
+
+5. Sign out and sign in as `CORP\jsmith`.
+6. Verify that Control Panel and Windows Settings remain accessible.
+

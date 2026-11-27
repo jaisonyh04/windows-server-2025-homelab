@@ -1,46 +1,49 @@
-### Purpose
+## Purpose
 
-Troubleshoot `G`roup `P`olicy `O`bjects.
+Identify and resolve common Group Policy processing issues on domain-joined computers using built-in Windows troubleshooting tools.
 
 ---
+## 1 - Verify the Resultant Set of Policy (RSoP)
 
-## 1 - Force a Group Policy update
+On the affected computer, run:
 
-1. Open PowerShell and run:
-
-```powershell
-gpupdate /force
 ```
-
----
-## 2 - Verify the Resultant Set of Policy (RSoP) 
-
-
-1. If it is a **Computer Configuration** policy, restart the computer.
-2. If it is a **User Configuration** policy, sign out and sign back in.
-3. Verify that the GPO was applied:
-
-```powershell
-gpresult /scope computer /r
 gpresult /scope user /r
+gpresult /scope computer /r
 ```
-<img width="975" height="509" alt="image" src="https://github.com/user-attachments/assets/a5805a68-a3f9-4e82-a389-fc5996ccc217" />
-<img width="975" height="509" alt="image" src="https://github.com/user-attachments/assets/6446a798-1a89-4517-a61e-09043cef1c57" />
-<img width="975" height="509" alt="image" src="https://github.com/user-attachments/assets/cfc92467-56b5-4c7a-aa03-a10d5195b2e7" />
 
-4. Verify that **Computer Settings** or **User Settings** match the expected target.
-5. The correct **Applied Group Policy Objects** are listed.
-6. The GPO does not appear under **filtered out**.
+Run the user-scope command as the affected user and the computer-scope command with administrative privileges.
+
+Verify that:
+
+- The expected GPO appears under **Applied Group Policy Objects**.
+- The GPO has not been filtered out.
+- The policy applies to the intended user or computer.
+
+To generate a detailed report:
+
+```
+gpresult /h "$env:TEMP\GPReport.html" /f
+```
 
 ---
-## 3 - Verify the GPO configuration
+## 2 - Verify the GPO configuration
 
-1. Verify that the user or computer object is located in the correct **Organizational Unit (OU)**.
-2. Verify that the GPO is linked to the correct `OU` and that **Link Enabled** is enabled.
-3. Verify the GPO's **Security Filtering** and **Delegation** permissions.
-4. Check **Event Viewer** for Group Policy processing errors.
+Open Group Policy Management and verify that:
 
-```text
+1. The user or computer object is located in the correct OU.
+2. The GPO is linked to the correct OU.
+3. **Link Enabled** is enabled.
+4. The relevant User or Computer Configuration settings are enabled.
+5. Security Filtering and Delegation permissions are correctly configured.
+6. No conflicting GPO overrides the expected setting.
+
+---
+## 3 - Check Group Policy event logs
+
+On the affected computer, open Event Viewer and navigate to:
+
+```
 Event Viewer
 └── Applications and Services Logs
     └── Microsoft
@@ -49,4 +52,22 @@ Event Viewer
                 └── Operational
 ```
 
-<img width="1275" height="763" alt="image" src="https://github.com/user-attachments/assets/09e7a1cd-ac0f-434d-9a56-053f69a20cf3" />
+Review recent Group Policy processing warnings and errors.
+
+---
+## 4 - Refresh Group Policy
+
+After correcting any configuration issues, run:
+
+```
+gpupdate /force
+```
+
+Restart the computer or sign out and sign back in if required by the configured policy.
+
+---
+## 5 - Verify the resolution
+
+1. Run `gpresult` again to verify that the expected GPO has been applied.
+2. Test the actual policy functionality.
+3. Verify that the identified Group Policy processing errors no longer occur.

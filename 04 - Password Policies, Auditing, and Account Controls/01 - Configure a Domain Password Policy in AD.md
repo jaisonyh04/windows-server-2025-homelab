@@ -22,42 +22,28 @@ Configure and Enforce a consistent password policy for all domain accounts.
 
 | Setting                                     | Value         | Why                                                               |
 | ------------------------------------------- | ------------- | ----------------------------------------------------------------- |
-| Minimum password length                     | 14 characters | Matches Microsoft’s Windows Server 2025 security baseline         |
-| Password must meet complexity requirements  | Enabled       | Baseline default                                                  |
-| Enforce password history                    | 24            | Prevents password reuse                                           |
+| Minimum password length                     | 14 characters | Encourages longer and stronger passwords.                         |
+| Password must meet complexity requirements  | Enabled       | Enforces password complexity requirements.                        |
+| Enforce password history                    | 24            | Prevents immediate reuse of previous passwords.                   |
 | Minimum password age                        | 1 day         | Stops users from cycling through history to reuse an old password |
-| Maximum password age                        | 90            |                                                                   |
-| Store passwords using reversible encryption | Disabled      | Weakens password storage                                          |
+| Maximum password age                        | 90            | Enforces periodic password changes for applicable accounts.       |
+| Store passwords using reversible encryption | Disabled      | Prevents insecure, reversible password storage.                   |
 ### Verification
 
-1. Log in to `WIN11-01` using a domain account.
-2. Press **Ctrl + Alt + Delete** → **Change a password**.
-3. Attempt to set a password that does not meet the password policy (for example, `password`).
-4. Verify that Windows rejects the password.
-5. Set a password that meets the domain password policy requirements.
-6. Verify that the password change succeeds.
-7. On `DC01`, open PowerShell and run:
+1. On `DC01`, open PowerShell as administrator and run:
 
 ```powershell
+gpupdate /force
 Get-ADDefaultDomainPasswordPolicy
 ```
 
-Expected output:
-
-```
-ComplexityEnabled           : True
-DistinguishedName           : DC=corp,DC=test
-LockoutDuration             : 00:10:00
-LockoutObservationWindow    : 00:10:00
-LockoutThreshold            : 0
-MaxPasswordAge              : 90.00:00:00
-MinPasswordAge              : 1.00:00:00
-MinPasswordLength           : 14
-objectClass                 : {domainDNS}
-objectGuid                  : 5e56184d-991a-45aa-ae28-a0b7b4a9eab9
-PasswordHistoryCount        : 24
-ReversibleEncryptionEnabled : False
-```
+2. Verify that the configured password policy values are correct.
+3. On `WIN11-01`, sign in as `CORP\mjohnson`.
+4. Press **Ctrl + Alt + Delete** → **Change a password**.
+5. Attempt to set a password that does not meet the domain password policy requirements.
+6. Verify that Windows rejects the password.
+7. Set a password that meets the domain password policy requirements.
+8. Verify that the password change succeeds.
 
 ---
 ## 3 - Configure the Account Lockout Policy
@@ -87,7 +73,7 @@ Reset account lockout counter after: 15 minutes
 Get-ADDefaultDomainPasswordPolicy
 ```
 
-Expected output:
+Example output:
 
 ```
 ComplexityEnabled           : True
