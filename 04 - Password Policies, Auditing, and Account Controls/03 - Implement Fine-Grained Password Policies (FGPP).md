@@ -45,6 +45,8 @@ Implement a stricter password policy for privileged administrative accounts with
 | Enforce account lockout policy             | Disabled              |
 5. Under *Directly Applies To*, click **Add...**.
 6. Enter `GG_Privileged_Accounts` → **Check Names** → **OK** → **OK**.
+<img width="1277" height="764" alt="Screenshot_20261128_040354" src="https://github.com/user-attachments/assets/a95289cb-0001-45d0-b775-b2fe76b60489" />
+<img width="1276" height="766" alt="Screenshot_20261128_040447" src="https://github.com/user-attachments/assets/33bc0f86-f788-40b6-a787-d90e91a51db3" />
 
 
 > [!important]
@@ -62,3 +64,5 @@ Implement a stricter password policy for privileged administrative accounts with
 - [ ] Set a compliant password containing at least 20 characters.
 - [ ] Verify that the operation succeeds.
 - [ ] Remove the temporary account after completing the test.
+
+<img width="1277" height="765" alt="Screenshot_20261128_041530" src="https://github.com/user-attachments/assets/ebcad51d-6530-4c8a-9461-96b77cd569b6" />
