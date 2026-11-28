@@ -65,26 +65,26 @@ The lab documents domain deployment, user and group administration, workstation 
 
 - **Domain sign-in failures**: Documented four simulated Help Desk tickets covering account lockout, recurring lockout, disabled accounts, and expired accounts. Used Security Event ID 4740 to trace recurring lockouts and documented how to verify sign-in after remediation.
 - **Group Policy application**: Used gpresult to check applied policies, reviewed OU placement, GPO links, and security filtering, and checked the Group Policy operational log in Event Viewer. |
-- **Windows Server Backup failure**: Documented recovery from a backup snap-in error, including schedule reconfiguration and a follow-up backup check. |
+- **Windows Server Backup failure**: Documented recovery from a backup snap-in error, including schedule reconfiguration and a follow-up backup check.
 
 ---
 ## 4. Learning Resources & Tools
 
-[https://www.youtube.com/@EastCharmer]()
+[EastCharmer](https://www.youtube.com/@EastCharmer)
 
-[https://labitpro.com/]()
+[labitpro](https://labitpro.com/)
 
-[https://www.writethedocs.org/]()
+[writethedocs](https://www.writethedocs.org/)
 
-[https://github.com/kiril4ik/project-docs-guide]()
+[project-docs-guide](https://github.com/kiril4ik/project-docs-guide)
 
-[https://obsidian.md/help/]()
+[Obsidian](https://obsidian.md/help/)
 
-[https://www.youtube.com/watch?v=BTLRQ_PZwp4]()
+[Online Training for Everyone](https://www.youtube.com/watch?v=BTLRQ_PZwp4)
 
-[https://learn.microsoft.com/en-us/]()
+[Microsoft Learn](https://learn.microsoft.com/en-us/)
 
-[https://chatgpt.com/]()
+[ChatGPT](https://chatgpt.com/)
 
 ---
 ## 5. Homelab Infrastructure Layout
