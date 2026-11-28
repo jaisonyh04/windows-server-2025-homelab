@@ -43,3 +43,4 @@ jaison-admin
 ```
 
 <img width="1278" height="766" alt="image" src="https://github.com/user-attachments/assets/1e9edb7c-20a1-4631-b392-82f386525887" />
+<img width="1920" height="1080" alt="Captura de pantalla 2026-11-28 045729" src="https://github.com/user-attachments/assets/471f9a34-fcf3-487f-84bd-3b8f386c2766" />
