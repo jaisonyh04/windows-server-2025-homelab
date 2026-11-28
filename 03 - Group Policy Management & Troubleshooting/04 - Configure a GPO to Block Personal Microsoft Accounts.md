@@ -21,7 +21,7 @@ Prevent users from adding or signing in with personal Microsoft accounts on doma
 ---
 ## Verification
 
-1. Log in using a domain account.
+1. On `WIN11-01`, log in using a domain account.
 2. Open **Settings → Accounts**.
 3. Attempt to add a personal Microsoft account and verify that Windows prevents it.
 4. Open PowerShell and run:

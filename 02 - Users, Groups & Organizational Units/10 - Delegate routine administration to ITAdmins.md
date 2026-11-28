@@ -37,7 +37,6 @@ Delegate user account administration to the IT Administrators group.
 19. Click **Next** → **Finish**.
 
 ---
-
 ### Manage Computers accounts
 
 1. Right-click `Computers` OU → **Delegate Control**.
@@ -58,7 +57,6 @@ Delegate user account administration to the IT Administrators group.
 10. Click **Next** → **Finish**.
 
 ---
-
 ### Manage Domain Local group membership
 
 1. Navigate to: `Corp` → `Groups`.
@@ -75,7 +73,6 @@ Delegate user account administration to the IT Administrators group.
 7. Click **Next** → **Finish**.
 
 ---
-
 ### Test delegated permissions
 
 1. On `WIN11-01` sign in using test accounts for `GG_IT_SysAdmins` (jsmith / abrown).
