@@ -35,6 +35,8 @@ Computer Configuration
 2. Sign-in using test accounts for `GG_IT_HelpDesk`, `GG_HR`, `GG_Finance` and `GG_Operations`.
 3. Verify Windows display the error message: `The sign-in method you're trying to use isn't allowed. For more info, contact your network administrator`.
 
+<img width="1277" height="763" alt="image" src="https://github.com/user-attachments/assets/778fc493-5758-4481-85ef-bb4c8d5f66c8" />
+
 ---
 ## 3 - Testing Allow log on through Remote Desktop Services
 
@@ -45,5 +47,6 @@ Computer Configuration
 5. Enter the password →**OK**.
 6. Verify Windows display the error message: `The connection was denied because the user account is not authorized for remote login`.
 
+<img width="1277" height="763" alt="image" src="https://github.com/user-attachments/assets/ed5b9737-07df-404f-9ab2-a4a053247e6c" />
 
 
