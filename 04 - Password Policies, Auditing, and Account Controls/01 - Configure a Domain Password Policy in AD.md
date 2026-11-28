@@ -7,7 +7,7 @@ Configure and Enforce a consistent password policy for all domain accounts.
 > If you set them on an OU, they only affect local accounts of computers in that OU.
 
 ---
-## 1 - Open the Default Domain Policy
+## 1 - Configure the Default Domain Policy
 
 1. Open *Server Manager* → *Tools* → *Group Policy Management*.
 2. Navigate to: `Forest: corp.test` → `Domains` → `corp.test`.
@@ -35,7 +35,7 @@ Configure and Enforce a consistent password policy for all domain accounts.
 6. Verify that the password change succeeds.
 
 ---
-## 3 - Configure the Account Lockout Policy
+## 2 - Configure the Account Lockout Policy
 
 1. Navigate to: *Computer Configuration* → *Policies* → *Windows Settings* → *Security Settings* → *Account Policies* → *Account Lockout Policy*.
 2. Double-click *Account Lockout Policy*.
